@@ -72,5 +72,20 @@ namespace SuperMercado
                 limpiar();
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                if (txtContraseña.PasswordChar == '*')
+                {
+                    txtContraseña.PasswordChar = '\0';
+                }
+            }
+            else
+            {
+                txtContraseña.PasswordChar = '*';
+            }
+        }
     }
 }
