@@ -34,5 +34,11 @@ namespace SuperMercado
             txtFechaHora.Text = DateTime.Now.ToString();
             label33.Text = "Diego";
         }
+
+        private void btnAbrirImg_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+
+        }
     }
 }

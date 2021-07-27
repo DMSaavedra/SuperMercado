@@ -80,6 +80,10 @@ namespace SuperMercado
             this.txtFechaHora = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnAbrirImg = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -87,6 +91,7 @@ namespace SuperMercado
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -321,11 +326,14 @@ namespace SuperMercado
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnAbrirImg);
+            this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.textBox2);
@@ -355,7 +363,7 @@ namespace SuperMercado
             "Embutidos",
             "Lacteos",
             "Carnes"});
-            this.comboBox2.Location = new System.Drawing.Point(344, 82);
+            this.comboBox2.Location = new System.Drawing.Point(344, 37);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(128, 21);
             this.comboBox2.TabIndex = 35;
@@ -372,7 +380,7 @@ namespace SuperMercado
             "LG",
             "TCL",
             "Nestle"});
-            this.comboBox1.Location = new System.Drawing.Point(91, 82);
+            this.comboBox1.Location = new System.Drawing.Point(344, 67);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(128, 21);
             this.comboBox1.TabIndex = 35;
@@ -380,14 +388,14 @@ namespace SuperMercado
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(598, 82);
+            this.textBox6.Location = new System.Drawing.Point(89, 124);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(128, 20);
             this.textBox6.TabIndex = 34;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(598, 38);
+            this.textBox3.Location = new System.Drawing.Point(92, 93);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(128, 20);
             this.textBox3.TabIndex = 34;
@@ -396,7 +404,7 @@ namespace SuperMercado
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(512, 85);
+            this.label17.Location = new System.Drawing.Point(47, 127);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 13);
             this.label17.TabIndex = 33;
@@ -406,7 +414,7 @@ namespace SuperMercado
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(27, 89);
+            this.label14.Location = new System.Drawing.Point(287, 70);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 33;
@@ -416,7 +424,7 @@ namespace SuperMercado
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(512, 41);
+            this.label16.Location = new System.Drawing.Point(19, 96);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(72, 13);
             this.label16.TabIndex = 31;
@@ -424,7 +432,7 @@ namespace SuperMercado
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(344, 38);
+            this.textBox2.Location = new System.Drawing.Point(92, 64);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(128, 20);
             this.textBox2.TabIndex = 32;
@@ -433,7 +441,7 @@ namespace SuperMercado
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(267, 41);
+            this.label13.Location = new System.Drawing.Point(25, 67);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 13);
             this.label13.TabIndex = 31;
@@ -443,7 +451,7 @@ namespace SuperMercado
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(267, 89);
+            this.label15.Location = new System.Drawing.Point(267, 40);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 13);
             this.label15.TabIndex = 29;
@@ -594,6 +602,38 @@ namespace SuperMercado
             this.label32.TabIndex = 22;
             this.label32.Text = "Bievenido ";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(297, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(48, 13);
+            this.label18.TabIndex = 33;
+            this.label18.Text = "Foto  :";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(546, 30);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(162, 134);
+            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnAbrirImg
+            // 
+            this.btnAbrirImg.Location = new System.Drawing.Point(344, 95);
+            this.btnAbrirImg.Name = "btnAbrirImg";
+            this.btnAbrirImg.Size = new System.Drawing.Size(39, 23);
+            this.btnAbrirImg.TabIndex = 37;
+            this.btnAbrirImg.Text = "...";
+            this.btnAbrirImg.UseVisualStyleBackColor = true;
+            this.btnAbrirImg.Click += new System.EventHandler(this.btnAbrirImg_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,6 +660,7 @@ namespace SuperMercado
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -676,5 +717,9 @@ namespace SuperMercado
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button btnAbrirImg;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
