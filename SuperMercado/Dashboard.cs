@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SuperMercado
 {
-    public partial class Administrador : Form
+    public partial class Dashboard : Form
     {
-        public Administrador()
+        public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            txtFechaHora.Text = DateTime.Now.ToString();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -24,15 +29,10 @@ namespace SuperMercado
             this.Close();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Dashboard_Load(object sender, EventArgs e)
         {
             txtFechaHora.Text = DateTime.Now.ToString();
-        }
-
-        private void Administrador_Load(object sender, EventArgs e)
-        {
-            txtFechaHora.Text = DateTime.Now.ToString();
-            label33.Text = "Diego";
+            label33.Text = "Anthony";
         }
     }
 }

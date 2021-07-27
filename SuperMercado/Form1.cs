@@ -32,7 +32,7 @@ namespace SuperMercado
 
         public void limpiar()
         {
-            txtUsuario.Text = txtContraseña.Text = " ";
+            txtUsuario.Text = txtContraseña.Text = "";
         }
 
         public void logeo(string usu, string psswd)
@@ -40,7 +40,7 @@ namespace SuperMercado
             string nombre = txtUsuario.Text;
             string contra = txtContraseña.Text;
 
-            if (nombre == "diego" && contra == "11111")
+            if (nombre == "diego" && contra == "12345")
             {
                 MessageBox.Show("Bienvenido ADMINISTRADOR  \n" + nombre);
 
@@ -52,6 +52,10 @@ namespace SuperMercado
             else if (nombre == "dams" && contra == "54321")
             {
                 MessageBox.Show("Bienvenido USUARIO  \n" + nombre);
+
+                this.Hide();
+                new Dashboard().ShowDialog();
+                this.Close();
             }
             else
             {
