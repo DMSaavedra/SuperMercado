@@ -19,7 +19,8 @@ namespace SuperMercado
 
         private void pctSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            new InicioUs().ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -30,6 +31,12 @@ namespace SuperMercado
         private void DetalleCompra_Load(object sender, EventArgs e)
         {
             lblFechaHora.Text = DateTime.Now.ToString();
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new SmsCompra().ShowDialog();
         }
     }
 }

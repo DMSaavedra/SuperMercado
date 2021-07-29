@@ -19,7 +19,8 @@ namespace SuperMercado
 
         private void pctSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            new Dashboard().ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
