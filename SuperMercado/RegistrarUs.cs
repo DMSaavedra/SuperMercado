@@ -73,5 +73,11 @@ namespace SuperMercado
                 return;
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form1().ShowDialog();
+        }
     }
 }
