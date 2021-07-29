@@ -40,7 +40,7 @@ namespace SuperMercado
             string nombre = txtUsuario.Text;
             string contra = txtContraseña.Text;
 
-            if (nombre == "diego" && contra == "12345")
+            if (nombre == "admin" && contra == "admin")
             {
                 MessageBox.Show("Bienvenido ADMINISTRADOR  \n" + nombre);
 
@@ -49,7 +49,7 @@ namespace SuperMercado
                 this.Close();
 
             }
-            else if (nombre == "dams" && contra == "54321")
+            else if (nombre == "diego" && contra == "12345")
             {
                 MessageBox.Show("Bienvenido USUARIO  \n" + nombre);
 

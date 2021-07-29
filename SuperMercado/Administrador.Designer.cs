@@ -58,6 +58,7 @@ namespace SuperMercado
             this.lblNomAdmin = new System.Windows.Forms.Label();
             this.lblFechaHora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnlSbmUsuarios.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,8 +67,10 @@ namespace SuperMercado
             this.pnlSbmProductos.SuspendLayout();
             this.pnlSbmProveedores.SuspendLayout();
             this.pnlSbmVentas.SuspendLayout();
+            this.pnlContenedor.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -111,7 +114,7 @@ namespace SuperMercado
             this.btnTipoUsuarios.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoUsuarios.Location = new System.Drawing.Point(0, 30);
             this.btnTipoUsuarios.Name = "btnTipoUsuarios";
-            this.btnTipoUsuarios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnTipoUsuarios.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnTipoUsuarios.Size = new System.Drawing.Size(221, 30);
             this.btnTipoUsuarios.TabIndex = 0;
             this.btnTipoUsuarios.Text = "Tipo de Usuarios";
@@ -128,7 +131,7 @@ namespace SuperMercado
             this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUsuarios.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnUsuarios.Size = new System.Drawing.Size(221, 30);
             this.btnUsuarios.TabIndex = 0;
             this.btnUsuarios.Text = "Usuarios";
@@ -144,10 +147,12 @@ namespace SuperMercado
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(0, 155);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(221, 40);
             this.button1.TabIndex = 1;
             this.button1.Text = "USUARIOS";
@@ -168,19 +173,23 @@ namespace SuperMercado
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(122, 13);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(91, 13);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(103, 132);
+            this.pictureBox2.Size = new System.Drawing.Size(126, 132);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(11, 13);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 132);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -192,10 +201,12 @@ namespace SuperMercado
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.Location = new System.Drawing.Point(0, 259);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(221, 40);
             this.button2.TabIndex = 3;
             this.button2.Text = "PRODUCTOS";
@@ -222,7 +233,7 @@ namespace SuperMercado
             this.btnProductos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.Location = new System.Drawing.Point(0, 0);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnProductos.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnProductos.Size = new System.Drawing.Size(221, 30);
             this.btnProductos.TabIndex = 0;
             this.btnProductos.Text = "Productos";
@@ -239,7 +250,7 @@ namespace SuperMercado
             this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(0, 30);
             this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(221, 30);
             this.button4.TabIndex = 0;
             this.button4.Text = "Categoria de Productos";
@@ -255,10 +266,12 @@ namespace SuperMercado
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.Location = new System.Drawing.Point(0, 363);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(221, 40);
             this.button3.TabIndex = 5;
             this.button3.Text = "PROVEEDORES";
@@ -285,7 +298,7 @@ namespace SuperMercado
             this.btnProveedores.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.Location = new System.Drawing.Point(0, 0);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnProveedores.Size = new System.Drawing.Size(221, 30);
             this.btnProveedores.TabIndex = 0;
             this.btnProveedores.Text = "Proveedores";
@@ -302,7 +315,7 @@ namespace SuperMercado
             this.btnMarcas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcas.Location = new System.Drawing.Point(0, 30);
             this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnMarcas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnMarcas.Size = new System.Drawing.Size(221, 30);
             this.btnMarcas.TabIndex = 0;
             this.btnMarcas.Text = "Marcas de Productos";
@@ -318,10 +331,12 @@ namespace SuperMercado
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.Location = new System.Drawing.Point(0, 468);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(221, 40);
             this.button5.TabIndex = 7;
             this.button5.Text = "VENTAS";
@@ -348,7 +363,7 @@ namespace SuperMercado
             this.btnVentas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.Location = new System.Drawing.Point(0, 0);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnVentas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnVentas.Size = new System.Drawing.Size(221, 30);
             this.btnVentas.TabIndex = 0;
             this.btnVentas.Text = "Ventas";
@@ -365,7 +380,7 @@ namespace SuperMercado
             this.btnDetalleVentas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleVentas.Location = new System.Drawing.Point(0, 30);
             this.btnDetalleVentas.Name = "btnDetalleVentas";
-            this.btnDetalleVentas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDetalleVentas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnDetalleVentas.Size = new System.Drawing.Size(221, 30);
             this.btnDetalleVentas.TabIndex = 0;
             this.btnDetalleVentas.Text = "Detalle Ventas";
@@ -381,10 +396,12 @@ namespace SuperMercado
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReportes.Location = new System.Drawing.Point(0, 572);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnReportes.Size = new System.Drawing.Size(221, 40);
             this.btnReportes.TabIndex = 9;
             this.btnReportes.Text = "REPORTES";
@@ -395,6 +412,7 @@ namespace SuperMercado
             // pnlContenedor
             // 
             this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(207)))));
+            this.pnlContenedor.Controls.Add(this.pictureBox4);
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(238, 0);
             this.pnlContenedor.Name = "pnlContenedor";
@@ -448,6 +466,17 @@ namespace SuperMercado
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(81, 100);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(553, 333);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
             // Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -458,7 +487,7 @@ namespace SuperMercado
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(950, 600);
+            this.MinimumSize = new System.Drawing.Size(800, 560);
             this.Name = "Administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrador";
@@ -471,9 +500,11 @@ namespace SuperMercado
             this.pnlSbmProductos.ResumeLayout(false);
             this.pnlSbmProveedores.ResumeLayout(false);
             this.pnlSbmVentas.ResumeLayout(false);
+            this.pnlContenedor.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,5 +537,6 @@ namespace SuperMercado
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel pnlContenedor;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

@@ -90,6 +90,12 @@
     <Compile Include="SmsCompra.Designer.cs">
       <DependentUpon>SmsCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosAdm.Designer.cs">
+      <DependentUpon>UsuariosAdm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SmsCompra.resx">
       <DependentUpon>SmsCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosAdm.resx">
+      <DependentUpon>UsuariosAdm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -17,6 +17,16 @@ namespace SuperMercado
             InitializeComponent();
             customDesign();
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblFechaHora.Text = DateTime.Now.ToString();
+        }
+
+        private void Administrador_Load(object sender, EventArgs e)
+        {
+            lblFechaHora.Text = DateTime.Now.ToString();
+        }
+
         #region Diseño Botones
         public void customDesign()
         {
@@ -59,6 +69,24 @@ namespace SuperMercado
             }
         }
         #endregion
+        
+        #region Abrir Formularios Hijos
+        private Form activeForm = null;
+        private void abriFormHijo(Form FormHijo)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = FormHijo;
+            FormHijo.TopLevel = false;
+            FormHijo.FormBorderStyle = FormBorderStyle.None;
+            FormHijo.Dock = DockStyle.Fill;
+            pnlContenedor.Controls.Add(FormHijo);
+            pnlContenedor.Tag = FormHijo;
+            FormHijo.BringToFront();
+            FormHijo.Show();
+        }
+        #endregion
+
         private void button1_Click(object sender, EventArgs e)
         {
             showSubMenu(pnlSbmUsuarios);
@@ -66,6 +94,7 @@ namespace SuperMercado
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            abriFormHijo(new UsuariosAdm());
             //Codigo...
             hideSubMenu();
         }
@@ -130,16 +159,6 @@ namespace SuperMercado
         private void btnReportes_Click(object sender, EventArgs e)
         {
             //Mostrar Pantalla Anidado
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblFechaHora.Text = DateTime.Now.ToString();
-        }
-
-        private void Administrador_Load(object sender, EventArgs e)
-        {
-            lblFechaHora.Text = DateTime.Now.ToString();
         }
     }
 }
