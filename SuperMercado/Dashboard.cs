@@ -22,13 +22,6 @@ namespace SuperMercado
             lblFechaHora.Text = DateTime.Now.ToString();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Form1().ShowDialog();
-            this.Close();
-        }
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
             lblFechaHora.Text = DateTime.Now.ToString();
@@ -37,6 +30,12 @@ namespace SuperMercado
         private void pctSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pctLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form1().ShowDialog();
         }
     }
 }

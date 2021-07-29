@@ -143,6 +143,7 @@ namespace SuperMercado
             this.pctLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogin.TabIndex = 22;
             this.pctLogin.TabStop = false;
+            this.pctLogin.Click += new System.EventHandler(this.pctLogin_Click);
             // 
             // label1
             // 

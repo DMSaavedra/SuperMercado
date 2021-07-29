@@ -64,18 +64,6 @@ namespace SuperMercado
             }
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContraseña.Text))
-            {
-                MessageBox.Show("No puede dejar campos vacios");
-            }
-            else
-            {
-                logeo(txtUsuario.Text, txtContraseña.Text);
-                limpiar();
-            }
-        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -90,6 +78,25 @@ namespace SuperMercado
             {
                 txtContraseña.PasswordChar = '*';
             }
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContraseña.Text))
+            {
+                MessageBox.Show("No puede dejar campos vacios");
+            }
+            else
+            {
+                logeo(txtUsuario.Text, txtContraseña.Text);
+                limpiar();
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Dashboard().ShowDialog();
         }
     }
 }
