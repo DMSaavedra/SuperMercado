@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SuperMercado
 {
-    public partial class InicioUs : Form
+    public partial class DetalleCompra : Form
     {
-        public InicioUs()
+        public DetalleCompra()
         {
             InitializeComponent();
         }
@@ -27,15 +27,9 @@ namespace SuperMercado
             lblFechaHora.Text = DateTime.Now.ToString();
         }
 
-        private void InicioUs_Load(object sender, EventArgs e)
+        private void DetalleCompra_Load(object sender, EventArgs e)
         {
             lblFechaHora.Text = DateTime.Now.ToString();
-        }
-
-        private void pctLogin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new DetalleCompra().ShowDialog();
         }
     }
 }
