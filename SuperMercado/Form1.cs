@@ -54,7 +54,7 @@ namespace SuperMercado
                 MessageBox.Show("Bienvenido USUARIO  \n" + nombre);
 
                 this.Hide();
-                new Dashboard().ShowDialog();
+                new InicioUs().ShowDialog();
                 this.Close();
             }
             else

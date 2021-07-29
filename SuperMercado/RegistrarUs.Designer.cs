@@ -200,6 +200,7 @@ namespace SuperMercado
             this.txtNombresComp.Name = "txtNombresComp";
             this.txtNombresComp.Size = new System.Drawing.Size(171, 24);
             this.txtNombresComp.TabIndex = 3;
+            this.txtNombresComp.Tag = "";
             this.txtNombresComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombresComp_KeyPress);
             // 
             // label2

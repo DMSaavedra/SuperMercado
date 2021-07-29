@@ -17,12 +17,6 @@ namespace SuperMercado
             InitializeComponent();
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Form1().ShowDialog();
-            this.Close();
-        }
         public void limpiar()
         {
             txtNombresComp.Text = txtCedula.Text = txtUsuario.Text = txtContrasenia.Text = txtCorreo.Text = txtTelefono.Text = txtDireccion.Text = " ";
@@ -41,6 +35,8 @@ namespace SuperMercado
             {
                 MessageBox.Show("Usuario Creado con Exito!!");
                 limpiar();
+                this.Hide();
+                new Form1().ShowDialog();
             }    
         }
 
