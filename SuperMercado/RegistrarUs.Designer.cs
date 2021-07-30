@@ -73,11 +73,11 @@ namespace SuperMercado
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(120, 210);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(171, 24);
+            this.txtTelefono.Size = new System.Drawing.Size(171, 22);
             this.txtTelefono.TabIndex = 3;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
@@ -93,10 +93,10 @@ namespace SuperMercado
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenia.Location = new System.Drawing.Point(120, 150);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(171, 24);
+            this.txtContrasenia.Size = new System.Drawing.Size(171, 22);
             this.txtContrasenia.TabIndex = 3;
             // 
             // label5
@@ -111,36 +111,36 @@ namespace SuperMercado
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtDireccion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(120, 240);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(171, 24);
+            this.txtDireccion.Size = new System.Drawing.Size(171, 22);
             this.txtDireccion.TabIndex = 3;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo.Location = new System.Drawing.Point(120, 180);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(171, 24);
+            this.txtCorreo.Size = new System.Drawing.Size(171, 22);
             this.txtCorreo.TabIndex = 3;
             // 
             // txtCedula
             // 
-            this.txtCedula.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtCedula.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.Location = new System.Drawing.Point(120, 90);
             this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(171, 24);
+            this.txtCedula.Size = new System.Drawing.Size(171, 22);
             this.txtCedula.TabIndex = 3;
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(120, 120);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(171, 24);
+            this.txtUsuario.Size = new System.Drawing.Size(171, 22);
             this.txtUsuario.TabIndex = 3;
             // 
             // label9
@@ -195,10 +195,10 @@ namespace SuperMercado
             // 
             // txtNombresComp
             // 
-            this.txtNombresComp.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtNombresComp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombresComp.Location = new System.Drawing.Point(120, 60);
             this.txtNombresComp.Name = "txtNombresComp";
-            this.txtNombresComp.Size = new System.Drawing.Size(171, 24);
+            this.txtNombresComp.Size = new System.Drawing.Size(171, 22);
             this.txtNombresComp.TabIndex = 3;
             this.txtNombresComp.Tag = "";
             this.txtNombresComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombresComp_KeyPress);

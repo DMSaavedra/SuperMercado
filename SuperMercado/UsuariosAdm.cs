@@ -21,5 +21,22 @@ namespace SuperMercado
         {
             this.Close();
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiaCampos();
+        }
+
+        private void limpiaCampos()
+        {
+            txtNombresComp.Clear();
+            txtCedula.Clear();
+            txtUsuario.Clear();
+            txtContrasenia.Clear();
+            txtCorreo.Clear();
+            txtTelefono.Clear();
+            txtDireccion.Clear();
+            cmbTipoUsuario.Text = "-- Seleccione --";
+        }
     }
 }
