@@ -11,7 +11,7 @@ namespace CapaDatos
     class CD_Conexion
     {
         //Creamos la cadena de conexion 
-        private SqlConnection conex = new SqlConnection("");
+        private SqlConnection conex = new SqlConnection(@"Data Source=LAPTOP-M0HDS4L2\DBSEGUNDO;Initial Catalog=SuperMercado;Integrated Security=True");
 
         //Metodos de apertura y Cierre de Conexion 
         public SqlConnection abrir_conexion()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaRNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,11 @@ namespace SuperMercado
 {
     public partial class UsuariosAdm : Form
     {
+        //Instanciar Capa Reglas del Negocio
+        private CRN_Usuarios objCRN = new CRN_Usuarios();
+        private string idUsuario = null;
+        private bool editar = false;
+
         public UsuariosAdm()
         {
             InitializeComponent();
@@ -37,6 +43,17 @@ namespace SuperMercado
             txtTelefono.Clear();
             txtDireccion.Clear();
             cmbTipoUsuario.Text = "-- Seleccione --";
+        }
+
+        private void UsuariosAdm_Load(object sender, EventArgs e)
+        {
+            mostrarUsuarios();
+        }
+
+        private void mostrarUsuarios()
+        {
+            CRN_Usuarios objeto = new CRN_Usuarios();
+            dgvUsuarios.DataSource = objeto.mostrarUs();
         }
     }
 }
