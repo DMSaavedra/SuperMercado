@@ -144,7 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaRNegocio\CapaRNegocio.csproj">
-      <Project>{b205467b-215a-425c-a110-c2214fc1f63f}</Project>
+      <Project>{ffd9f12b-b8f0-4be7-b8e5-b02c381a6a26}</Project>
       <Name>CapaRNegocio</Name>
     </ProjectReference>
   </ItemGroup>
