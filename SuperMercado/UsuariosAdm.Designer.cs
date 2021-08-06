@@ -54,7 +54,6 @@ namespace SuperMercado
             this.label6 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTipoUsuPrueba = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel1.SuspendLayout();
@@ -84,7 +83,6 @@ namespace SuperMercado
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtTipoUsuPrueba);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.btnEditar);
@@ -171,6 +169,7 @@ namespace SuperMercado
             this.btnRegistrar.TabIndex = 11;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // cmbTipoUsuario
             // 
@@ -178,7 +177,7 @@ namespace SuperMercado
             this.cmbTipoUsuario.FormattingEnabled = true;
             this.cmbTipoUsuario.Items.AddRange(new object[] {
             "Usuario"});
-            this.cmbTipoUsuario.Location = new System.Drawing.Point(428, 169);
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(420, 165);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(171, 25);
             this.cmbTipoUsuario.TabIndex = 27;
@@ -188,7 +187,7 @@ namespace SuperMercado
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(314, 169);
+            this.label8.Location = new System.Drawing.Point(309, 169);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 19);
             this.label8.TabIndex = 18;
@@ -197,7 +196,7 @@ namespace SuperMercado
             // txtNombresComp
             // 
             this.txtNombresComp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombresComp.Location = new System.Drawing.Point(127, 51);
+            this.txtNombresComp.Location = new System.Drawing.Point(108, 51);
             this.txtNombresComp.Name = "txtNombresComp";
             this.txtNombresComp.Size = new System.Drawing.Size(171, 22);
             this.txtNombresComp.TabIndex = 26;
@@ -206,7 +205,7 @@ namespace SuperMercado
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(428, 126);
+            this.txtTelefono.Location = new System.Drawing.Point(420, 126);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(171, 22);
@@ -235,7 +234,7 @@ namespace SuperMercado
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(127, 164);
+            this.txtDireccion.Location = new System.Drawing.Point(108, 164);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(171, 22);
             this.txtDireccion.TabIndex = 22;
@@ -244,7 +243,7 @@ namespace SuperMercado
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(314, 127);
+            this.label7.Location = new System.Drawing.Point(309, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 19);
             this.label7.TabIndex = 12;
@@ -253,7 +252,7 @@ namespace SuperMercado
             // txtCedula
             // 
             this.txtCedula.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(428, 51);
+            this.txtCedula.Location = new System.Drawing.Point(420, 51);
             this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(171, 22);
@@ -262,7 +261,7 @@ namespace SuperMercado
             // txtContrasenia
             // 
             this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenia.Location = new System.Drawing.Point(428, 89);
+            this.txtContrasenia.Location = new System.Drawing.Point(420, 89);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(171, 22);
             this.txtContrasenia.TabIndex = 24;
@@ -270,7 +269,7 @@ namespace SuperMercado
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(127, 126);
+            this.txtCorreo.Location = new System.Drawing.Point(108, 123);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(171, 22);
             this.txtCorreo.TabIndex = 25;
@@ -279,7 +278,7 @@ namespace SuperMercado
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(314, 89);
+            this.label5.Location = new System.Drawing.Point(309, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 19);
             this.label5.TabIndex = 15;
@@ -289,7 +288,7 @@ namespace SuperMercado
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(314, 51);
+            this.label3.Location = new System.Drawing.Point(309, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 19);
             this.label3.TabIndex = 14;
@@ -308,7 +307,7 @@ namespace SuperMercado
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(127, 88);
+            this.txtUsuario.Location = new System.Drawing.Point(108, 88);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(171, 22);
             this.txtUsuario.TabIndex = 21;
@@ -322,13 +321,6 @@ namespace SuperMercado
             this.label4.Size = new System.Drawing.Size(77, 19);
             this.label4.TabIndex = 17;
             this.label4.Text = "Usuario : ";
-            // 
-            // txtTipoUsuPrueba
-            // 
-            this.txtTipoUsuPrueba.Location = new System.Drawing.Point(512, 201);
-            this.txtTipoUsuPrueba.Name = "txtTipoUsuPrueba";
-            this.txtTipoUsuPrueba.Size = new System.Drawing.Size(87, 20);
-            this.txtTipoUsuPrueba.TabIndex = 29;
             // 
             // UsuariosAdm
             // 
@@ -376,6 +368,5 @@ namespace SuperMercado
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.TextBox txtTipoUsuPrueba;
     }
 }

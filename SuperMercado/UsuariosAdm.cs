@@ -1,5 +1,4 @@
-﻿using CapaRNegocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CapaRNegocio;
 
 namespace SuperMercado
 {
@@ -53,7 +54,39 @@ namespace SuperMercado
         private void mostrarUsuarios()
         {
             CRN_Usuarios objeto = new CRN_Usuarios();
-            dgvUsuarios.DataSource = objeto.mostrarUs();
+            dgvUsuarios.DataSource = objeto.mostrar_user();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNombresComp.Text) || string.IsNullOrEmpty(txtCedula.Text) ||
+                string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasenia.Text) ||
+                string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtTelefono.Text)) 
+            {
+                MessageBox.Show("Debe Llenar todos los Campos");
+            }
+            else if (cmbTipoUsuario.Text == "-- Seleccione --")
+            {
+                MessageBox.Show("Seleccione un Tipo de Usuario");
+            }
+            else
+            {
+                if (editar == false)
+                {
+                    try
+                    {
+                        objCRN.insertar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, cmbTipoUsuario.Text);
+                        MessageBox.Show("Se Guardo Correctamente!");
+                        mostrarUsuarios();
+                        limpiaCampos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Datos No Guardados" + ex.Message);
+                        throw;
+                    }
+                }
+            }
         }
     }
 }
