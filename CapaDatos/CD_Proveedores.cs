@@ -1,28 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CD_TipoUsuario
+    public class CD_Proveedores
     {
         CD_Conexion con = new CD_Conexion();
 
-        //---Propiedades del SQL
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand cmd = new SqlCommand();
 
-        //---Metodos para la Programacion del CRUD
         public DataTable mostrar()
         {
             cmd.Connection = con.abrir_conexion();
-            cmd.CommandText = "ListaTipoUsuarioActivos"; 
-            //cmd.CommandText = "ListaTipoUsuario"; //Todos los Usuarios A & I 
+            cmd.CommandText = "ListaProveedoresActivos";
+            //cmd.CommandText = "ListaProveedores"; //Todos los Usuarios A & I 
             cmd.CommandType = CommandType.StoredProcedure;
             leer = cmd.ExecuteReader();
             tabla.Load(leer);
@@ -30,33 +28,35 @@ namespace CapaDatos
 
             return tabla;
         }
-        public void insertar(string TusuNombre)
+        public void insertar(string ProvNombre, int ProvCedula)
         {
             cmd.Connection = con.abrir_conexion();
-            cmd.CommandText = "CrearTipoUsuario";
+            cmd.CommandText = "CrearProveedor";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@TusuNombre", TusuNombre);
+            cmd.Parameters.AddWithValue("@ProvNombre", ProvNombre);
+            cmd.Parameters.AddWithValue("@ProvCedula", ProvCedula);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             con.cerrar_conexion();
         }
-        public void editar(string TusuNombre, int idTusu)
+        public void editar(string ProvNombre, int ProvCedula, int idProveedor)
         {
             cmd.Connection = con.abrir_conexion();
-            cmd.CommandText = "EditarTipoUsuario";
+            cmd.CommandText = "EditarProveedor";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@TusuNombre", TusuNombre);
-            cmd.Parameters.AddWithValue("@idTusu", idTusu);
+            cmd.Parameters.AddWithValue("@ProvNombre", ProvNombre);
+            cmd.Parameters.AddWithValue("@ProvCedula", ProvCedula);
+            cmd.Parameters.AddWithValue("@idProveedor", idProveedor);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             con.cerrar_conexion();
         }
-        public void eliminar(int idTusu)
+        public void eliminar(int idProveedor)
         {
             cmd.Connection = con.abrir_conexion();
-            cmd.CommandText = "EliminarTipoUsuario";
+            cmd.CommandText = "EliminarProveedor";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idTusu", idTusu);
+            cmd.Parameters.AddWithValue("@idProveedor", idProveedor);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             con.cerrar_conexion();

@@ -21,5 +21,10 @@ namespace SuperMercado
         {
             this.Close();
         }
+
+        private void MarcaAdm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

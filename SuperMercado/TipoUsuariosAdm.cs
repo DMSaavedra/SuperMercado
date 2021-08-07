@@ -139,8 +139,6 @@ namespace SuperMercado
                 MessageBox.Show("Presione una Fila!");
                 limpiar();
             }
-        }
-
-        
+        } 
     }
 }
