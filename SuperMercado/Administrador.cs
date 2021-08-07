@@ -101,6 +101,7 @@ namespace SuperMercado
 
         private void btnTipoUsuarios_Click(object sender, EventArgs e)
         {
+            abriFormHijo(new TipoUsuariosAdm());
             //Codigo...
             hideSubMenu();
         }

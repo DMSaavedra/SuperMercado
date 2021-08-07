@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using CapaRNegocio;
 
 namespace SuperMercado
 {
     public partial class UsuariosAdm : Form
     {
         //Instanciar Capa Reglas del Negocio
-        private CRN_Usuarios objCRN = new CRN_Usuarios();
+        
         private string idUsuario = null;
         private bool editar = false;
 
@@ -48,45 +47,45 @@ namespace SuperMercado
 
         private void UsuariosAdm_Load(object sender, EventArgs e)
         {
-            mostrarUsuarios();
+            //mostrarUsuarios();
         }
 
         private void mostrarUsuarios()
         {
-            CRN_Usuarios objeto = new CRN_Usuarios();
-            dgvUsuarios.DataSource = objeto.mostrar_user();
+            //CRN_Usuarios objeto = new CRN_Usuarios();
+            //dgvUsuarios.DataSource = objeto.mostrar_user();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombresComp.Text) || string.IsNullOrEmpty(txtCedula.Text) ||
-                string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasenia.Text) ||
-                string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtTelefono.Text)) 
-            {
-                MessageBox.Show("Debe Llenar todos los Campos");
-            }
-            else if (cmbTipoUsuario.Text == "-- Seleccione --")
-            {
-                MessageBox.Show("Seleccione un Tipo de Usuario");
-            }
-            else
-            {
-                if (editar == false)
-                {
-                    try
-                    {
-                        objCRN.insertar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, cmbTipoUsuario.Text);
-                        MessageBox.Show("Se Guardo Correctamente!");
-                        mostrarUsuarios();
-                        limpiaCampos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Datos No Guardados" + ex.Message);
-                        throw;
-                    }
-                }
-            }
+            //if (string.IsNullOrEmpty(txtNombresComp.Text) || string.IsNullOrEmpty(txtCedula.Text) ||
+            //    string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasenia.Text) ||
+            //    string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtTelefono.Text)) 
+            //{
+            //    MessageBox.Show("Debe Llenar todos los Campos");
+            //}
+            //else if (cmbTipoUsuario.Text == "-- Seleccione --")
+            //{
+            //    MessageBox.Show("Seleccione un Tipo de Usuario");
+            //}
+            //else
+            //{
+            //    if (editar == false)
+            //    {
+            //        try
+            //        {
+            //            objCRN.insertar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, cmbTipoUsuario.Text);
+            //            MessageBox.Show("Se Guardo Correctamente!");
+            //            mostrarUsuarios();
+            //            limpiaCampos();
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show("Datos No Guardados" + ex.Message);
+            //            throw;
+            //        }
+            //    }
+            //}
         }
     }
 }

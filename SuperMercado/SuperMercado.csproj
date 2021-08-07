@@ -90,6 +90,12 @@
     <Compile Include="SmsCompra.Designer.cs">
       <DependentUpon>SmsCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="TipoUsuariosAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoUsuariosAdm.Designer.cs">
+      <DependentUpon>TipoUsuariosAdm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuariosAdm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SmsCompra.resx">
       <DependentUpon>SmsCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoUsuariosAdm.resx">
+      <DependentUpon>TipoUsuariosAdm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuariosAdm.resx">
       <DependentUpon>UsuariosAdm.cs</DependentUpon>
