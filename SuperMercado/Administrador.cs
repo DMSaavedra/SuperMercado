@@ -164,5 +164,12 @@ namespace SuperMercado
         {
             //Mostrar Pantalla Anidado
         }
+
+        private void pctSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form1().ShowDialog();
+            this.Close();
+        }
     }
 }

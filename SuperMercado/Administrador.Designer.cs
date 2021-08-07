@@ -59,6 +59,7 @@ namespace SuperMercado
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pctSalir = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,6 +72,7 @@ namespace SuperMercado
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +101,7 @@ namespace SuperMercado
             // 
             this.panel3.Controls.Add(this.lblFechaHora);
             this.panel3.Controls.Add(this.lblNomAdmin);
+            this.panel3.Controls.Add(this.pctSalir);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 612);
@@ -477,6 +480,17 @@ namespace SuperMercado
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pctSalir
+            // 
+            this.pctSalir.Image = ((System.Drawing.Image)(resources.GetObject("pctSalir.Image")));
+            this.pctSalir.Location = new System.Drawing.Point(191, 55);
+            this.pctSalir.Name = "pctSalir";
+            this.pctSalir.Size = new System.Drawing.Size(30, 33);
+            this.pctSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctSalir.TabIndex = 0;
+            this.pctSalir.TabStop = false;
+            this.pctSalir.Click += new System.EventHandler(this.pctSalir_Click);
+            // 
             // Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -505,6 +519,7 @@ namespace SuperMercado
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -538,5 +553,6 @@ namespace SuperMercado
         private System.Windows.Forms.Panel pnlContenedor;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pctSalir;
     }
 }

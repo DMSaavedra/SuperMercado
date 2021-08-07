@@ -64,22 +64,6 @@ namespace SuperMercado
             }
         }
 
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true)
-            {
-                if (txtContraseña.PasswordChar == '*')
-                {
-                    txtContraseña.PasswordChar = '\0';
-                }
-            }
-            else
-            {
-                txtContraseña.PasswordChar = '*';
-            }
-        }
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContraseña.Text))
@@ -97,6 +81,21 @@ namespace SuperMercado
         {
             this.Hide();
             new Dashboard().ShowDialog();
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                if (txtContraseña.PasswordChar == '*')
+                {
+                    txtContraseña.PasswordChar = '\0';
+                }
+            }
+            else
+            {
+                txtContraseña.PasswordChar = '*';
+            }
         }
     }
 }
