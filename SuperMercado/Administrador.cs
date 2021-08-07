@@ -119,6 +119,7 @@ namespace SuperMercado
 
         private void button4_Click(object sender, EventArgs e)
         {
+            abriFormHijo(new CategoriaProdAdm());
             //Codigo...
             hideSubMenu();
         }
@@ -130,12 +131,14 @@ namespace SuperMercado
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
+            abriFormHijo(new ProveedoresAdm());
             //Codigo...
             hideSubMenu();
         }
 
         private void btnMarcas_Click(object sender, EventArgs e)
         {
+            abriFormHijo(new MarcaAdm());
             //Codigo...
             hideSubMenu();
         }
