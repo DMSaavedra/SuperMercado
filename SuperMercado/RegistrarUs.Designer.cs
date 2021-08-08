@@ -35,11 +35,9 @@ namespace SuperMercado
             this.label7 = new System.Windows.Forms.Label();
             this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,13 +61,11 @@ namespace SuperMercado
             // 
             this.cmbTipoUsuario.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.cmbTipoUsuario.FormattingEnabled = true;
-            this.cmbTipoUsuario.Items.AddRange(new object[] {
-            "Usuario"});
-            this.cmbTipoUsuario.Location = new System.Drawing.Point(120, 271);
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(120, 239);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(171, 25);
             this.cmbTipoUsuario.TabIndex = 4;
-            this.cmbTipoUsuario.Text = "-- Seleccione --";
+            this.cmbTipoUsuario.Text = "Seleccione";
             // 
             // txtTelefono
             // 
@@ -109,14 +105,6 @@ namespace SuperMercado
             this.label5.TabIndex = 2;
             this.label5.Text = "Contraseña : ";
             // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(120, 240);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(171, 22);
-            this.txtDireccion.TabIndex = 3;
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,21 +131,11 @@ namespace SuperMercado
             this.txtUsuario.Size = new System.Drawing.Size(171, 22);
             this.txtUsuario.TabIndex = 3;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 241);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 19);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Dirección : ";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 275);
+            this.label8.Location = new System.Drawing.Point(6, 243);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 19);
             this.label8.TabIndex = 2;
@@ -218,7 +196,7 @@ namespace SuperMercado
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(153)))), ((int)(((byte)(84)))));
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(76, 313);
+            this.btnRegistrar.Location = new System.Drawing.Point(76, 280);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 30);
             this.btnRegistrar.TabIndex = 1;
@@ -245,7 +223,7 @@ namespace SuperMercado
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(242, 357);
+            this.panel2.Size = new System.Drawing.Size(242, 326);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox2
@@ -277,8 +255,6 @@ namespace SuperMercado
             this.panel3.Controls.Add(this.cmbTipoUsuario);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.txtNombresComp);
-            this.panel3.Controls.Add(this.txtDireccion);
-            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.txtTelefono);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label2);
@@ -293,7 +269,7 @@ namespace SuperMercado
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(242, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(316, 357);
+            this.panel3.Size = new System.Drawing.Size(316, 326);
             this.panel3.TabIndex = 2;
             // 
             // btnCancelar
@@ -301,7 +277,7 @@ namespace SuperMercado
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(166, 313);
+            this.btnCancelar.Location = new System.Drawing.Point(166, 280);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 30);
             this.btnCancelar.TabIndex = 9;
@@ -313,7 +289,7 @@ namespace SuperMercado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 357);
+            this.ClientSize = new System.Drawing.Size(557, 326);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -323,6 +299,7 @@ namespace SuperMercado
             this.Name = "RegistrarUs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Usuarios";
+            this.Load += new System.EventHandler(this.RegistrarUs_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -349,8 +326,6 @@ namespace SuperMercado
         private System.Windows.Forms.TextBox txtNombresComp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

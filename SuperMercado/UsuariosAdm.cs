@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaRNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,7 @@ namespace SuperMercado
 {
     public partial class UsuariosAdm : Form
     {
-        //Instanciar Capa Reglas del Negocio
-        
+        private CN_Usuarios objetoCN = new CN_Usuarios();
         private string idUsuario = null;
         private bool editar = false;
 
@@ -22,18 +22,72 @@ namespace SuperMercado
         {
             InitializeComponent();
         }
+        private void UsuariosAdm_Load(object sender, EventArgs e)
+        {
+            verUsuarios();
+            verCmbTusu();
+        }
+
+        private void verUsuarios()
+        {
+            CN_Usuarios objeto = new CN_Usuarios();
+            dgvUsuarios.DataSource = objeto.mostrar_user();
+        }
+
+        private void verCmbTusu()
+        {
+            CN_Usuarios objeto2 = new CN_Usuarios();
+            cmbTipoUsuario.DataSource = objeto2.cargar_tusus();
+            cmbTipoUsuario.DisplayMember = "TusuNombre";
+            cmbTipoUsuario.ValueMember = "idTusu";
+        }
 
         private void pctCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            limpiaCampos();
+            int idTusu = Convert.ToInt32(cmbTipoUsuario.SelectedValue.ToString());
+
+            if (string.IsNullOrEmpty(txtNombresComp.Text) && string.IsNullOrEmpty(txtCedula.Text) &&
+                string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtContrasenia.Text) &&
+                string.IsNullOrEmpty(txtCorreo.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                MessageBox.Show("Debe Llenar El Campo!");
+            }
+            else if (cmbTipoUsuario.Text == "Seleccione")
+            {
+                MessageBox.Show("Seleccione un Dato..");
+
+            }
+            else
+            {
+                if (editar == false)
+                {
+                    try
+                    {
+                        objetoCN.crear_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, idTusu.ToString());
+                        MessageBox.Show("Se Guardo Correctamente!");
+                        verUsuarios();
+                        limpiar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Datos no Guardados" + ex.Message);
+                        throw;
+                    }
+                }
+            }
         }
 
-        private void limpiaCampos()
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void limpiar()
         {
             txtNombresComp.Clear();
             txtCedula.Clear();
@@ -41,51 +95,84 @@ namespace SuperMercado
             txtContrasenia.Clear();
             txtCorreo.Clear();
             txtTelefono.Clear();
-            txtDireccion.Clear();
-            cmbTipoUsuario.Text = "-- Seleccione --";
+            cmbTipoUsuario.Text = "Seleccione";
         }
 
-        private void UsuariosAdm_Load(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            //mostrarUsuarios();
+            int idTusu = Convert.ToInt32(cmbTipoUsuario.SelectedValue.ToString());
+
+            if (string.IsNullOrEmpty(txtNombresComp.Text) && string.IsNullOrEmpty(txtCedula.Text) &&
+                string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtContrasenia.Text) &&
+                string.IsNullOrEmpty(txtCorreo.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                MessageBox.Show("De Doble Click en una FILA de la tabla, para editar datos");
+            }
+            else
+            {
+                if (editar)
+                {
+                    try
+                    {
+                        objetoCN.editar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, idTusu.ToString(), idUsuario);
+                        MessageBox.Show("Se edito correctamente..!");
+                        verUsuarios();
+                        limpiar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("NO se edito correctamente! " + ex.Message);
+                        throw;
+                    }
+                }
+            }
         }
 
-        private void mostrarUsuarios()
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //CRN_Usuarios objeto = new CRN_Usuarios();
-            //dgvUsuarios.DataSource = objeto.mostrar_user();
+            if (string.IsNullOrEmpty(txtNombresComp.Text) && string.IsNullOrEmpty(txtCedula.Text) &&
+                string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtContrasenia.Text) &&
+                string.IsNullOrEmpty(txtCorreo.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                MessageBox.Show("De Doble Click en una FILA de la tabla, para ELIMINAR datos");
+            }
+            else
+            {
+                try
+                {
+                    objetoCN.eliminar_user(idUsuario);
+                    MessageBox.Show("Registro Eliminado!");
+                    verUsuarios();
+                    limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("NO SE Elimino el Registro! " + ex.Message);
+                    throw;
+                }
+            }
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void dgvUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (string.IsNullOrEmpty(txtNombresComp.Text) || string.IsNullOrEmpty(txtCedula.Text) ||
-            //    string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasenia.Text) ||
-            //    string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtTelefono.Text)) 
-            //{
-            //    MessageBox.Show("Debe Llenar todos los Campos");
-            //}
-            //else if (cmbTipoUsuario.Text == "-- Seleccione --")
-            //{
-            //    MessageBox.Show("Seleccione un Tipo de Usuario");
-            //}
-            //else
-            //{
-            //    if (editar == false)
-            //    {
-            //        try
-            //        {
-            //            objCRN.insertar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, cmbTipoUsuario.Text);
-            //            MessageBox.Show("Se Guardo Correctamente!");
-            //            mostrarUsuarios();
-            //            limpiaCampos();
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            MessageBox.Show("Datos No Guardados" + ex.Message);
-            //            throw;
-            //        }
-            //    }
-            //}
+            if (dgvUsuarios.SelectedRows.Count > 0) 
+            {
+                editar = true;
+                txtNombresComp.Text = dgvUsuarios.CurrentRow.Cells["UsuNombreComp"].Value.ToString();
+                txtCedula.Text = dgvUsuarios.CurrentRow.Cells["UsuCedula"].Value.ToString();
+                txtUsuario.Text = dgvUsuarios.CurrentRow.Cells["UsuUsuario"].Value.ToString();
+                txtContrasenia.Text = dgvUsuarios.CurrentRow.Cells["UsuContrasenia"].Value.ToString();
+                txtCorreo.Text = dgvUsuarios.CurrentRow.Cells["UsuCorreo"].Value.ToString();
+                txtTelefono.Text = dgvUsuarios.CurrentRow.Cells["UsuTelefono"].Value.ToString();
+                cmbTipoUsuario.SelectedValue = dgvUsuarios.CurrentRow.Cells["idTusu"].Value.ToString();
+                idUsuario = dgvUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString();
+                btnRegistrar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Presione una Fila!");
+                limpiar();
+            }
         }
     }
 }

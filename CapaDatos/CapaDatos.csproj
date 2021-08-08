@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="CD_Categorias.cs" />
     <Compile Include="CD_Conexion.cs" />
+    <Compile Include="CD_Marca.cs" />
     <Compile Include="CD_Proveedores.cs" />
     <Compile Include="CD_TipoUsuario.cs" />
+    <Compile Include="CD_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

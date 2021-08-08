@@ -19,7 +19,7 @@ namespace SuperMercado
 
         public void limpiar()
         {
-            txtNombresComp.Text = txtCedula.Text = txtUsuario.Text = txtContrasenia.Text = txtCorreo.Text = txtTelefono.Text = txtDireccion.Text = " ";
+            txtNombresComp.Text = txtCedula.Text = txtUsuario.Text = txtContrasenia.Text = txtCorreo.Text = txtTelefono.Text = "";
             //cmbTipoUsuario ("-- Seleccione --");
         }
 
@@ -27,7 +27,7 @@ namespace SuperMercado
         {
             if (string.IsNullOrEmpty(txtNombresComp.Text) || string.IsNullOrEmpty(txtCedula.Text) ||
                 string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasenia.Text) ||
-                string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtDireccion.Text))
+                string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtTelefono.Text))
             {
                 MessageBox.Show("No puede dejar campos vacios");
             }
@@ -74,6 +74,11 @@ namespace SuperMercado
         {
             this.Hide();
             new Form1().ShowDialog();
+        }
+
+        private void RegistrarUs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -97,5 +97,12 @@ namespace SuperMercado
                 txtContraseña.PasswordChar = '*';
             }
         }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            new RegistrarUs().ShowDialog();
+            this.Close();
+        }
     }
 }

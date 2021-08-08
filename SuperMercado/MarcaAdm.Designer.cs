@@ -33,6 +33,8 @@ namespace SuperMercado
             this.pctCerrar = new System.Windows.Forms.PictureBox();
             this.dgvMarca = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -40,8 +42,6 @@ namespace SuperMercado
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbProveedor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
             this.panel1.SuspendLayout();
@@ -68,6 +68,7 @@ namespace SuperMercado
             this.dgvMarca.Name = "dgvMarca";
             this.dgvMarca.Size = new System.Drawing.Size(656, 212);
             this.dgvMarca.TabIndex = 4;
+            this.dgvMarca.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarca_CellDoubleClick);
             // 
             // panel1
             // 
@@ -85,6 +86,26 @@ namespace SuperMercado
             this.panel1.Size = new System.Drawing.Size(656, 248);
             this.panel1.TabIndex = 5;
             // 
+            // cmbProveedor
+            // 
+            this.cmbProveedor.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(411, 46);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(171, 25);
+            this.cmbProveedor.TabIndex = 39;
+            this.cmbProveedor.Text = "Seleccione";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(309, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 19);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Proveedor :";
+            // 
             // btnEliminar
             // 
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
@@ -96,6 +117,7 @@ namespace SuperMercado
             this.btnEliminar.TabIndex = 36;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -108,6 +130,7 @@ namespace SuperMercado
             this.btnLimpiar.TabIndex = 37;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEditar
             // 
@@ -120,6 +143,7 @@ namespace SuperMercado
             this.btnEditar.TabIndex = 34;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnRegistrar
             // 
@@ -132,6 +156,7 @@ namespace SuperMercado
             this.btnRegistrar.TabIndex = 35;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // txtMarca
             // 
@@ -161,25 +186,6 @@ namespace SuperMercado
             this.label1.Size = new System.Drawing.Size(299, 30);
             this.label1.TabIndex = 28;
             this.label1.Text = "MARCAS DE PRODUCTOS";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(309, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 19);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Proveedor :";
-            // 
-            // cmbProveedor
-            // 
-            this.cmbProveedor.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(411, 46);
-            this.cmbProveedor.Name = "cmbProveedor";
-            this.cmbProveedor.Size = new System.Drawing.Size(171, 25);
-            this.cmbProveedor.TabIndex = 39;
             // 
             // MarcaAdm
             // 
