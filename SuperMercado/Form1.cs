@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaRNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace SuperMercado
 {
     public partial class Form1 : Form
     {
+        private CN_Usuarios objetoCN = new CN_Usuarios();
 
         public Form1()
         {
@@ -35,34 +37,34 @@ namespace SuperMercado
             txtUsuario.Text = txtContraseña.Text = "";
         }
 
-        public void logeo(string usu, string psswd)
-        {
-            string nombre = txtUsuario.Text;
-            string contra = txtContraseña.Text;
+        //public void logeo(string usu, string psswd)
+        //{
+        //    string nombre = txtUsuario.Text;
+        //    string contra = txtContraseña.Text;
 
-            if (nombre == "admin" && contra == "admin")
-            {
-                MessageBox.Show("Bienvenido ADMINISTRADOR  \n" + nombre);
+        //    if (nombre == "admin" && contra == "admin")
+        //    {
+        //        MessageBox.Show("Bienvenido ADMINISTRADOR  \n" + nombre);
 
-                this.Hide();
-                new Administrador().ShowDialog();
-                this.Close();
+        //        this.Hide();
+        //        new Administrador().ShowDialog();
+        //        this.Close();
 
-            }
-            else if (nombre == "diego" && contra == "12345")
-            {
-                MessageBox.Show("Bienvenido USUARIO  \n" + nombre);
+        //    }
+        //    else if (nombre == "diego" && contra == "12345")
+        //    {
+        //        MessageBox.Show("Bienvenido USUARIO  \n" + nombre);
 
-                this.Hide();
-                new InicioUs().ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o Contraseña Incorrectas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                limpiar();
-            }
-        }
+        //        this.Hide();
+        //        new InicioUs().ShowDialog();
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Usuario o Contraseña Incorrectas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        limpiar();
+        //    }
+        //}
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -72,7 +74,7 @@ namespace SuperMercado
             }
             else
             {
-                logeo(txtUsuario.Text, txtContraseña.Text);
+                objetoCN.login_user(txtUsuario.Text, txtContraseña.Text);
                 limpiar();
             }
         }

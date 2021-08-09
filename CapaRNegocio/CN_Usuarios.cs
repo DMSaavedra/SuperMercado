@@ -36,5 +36,9 @@ namespace CapaRNegocio
         {
             objetoCD.eliminar(Convert.ToInt32(id));
         }
+        public void login_user(string user, string pssw)
+        {
+            objetoCD.Logueo(user, pssw);
+        }
     }
 }

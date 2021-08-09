@@ -179,6 +179,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{70DADBE8-4150-45D3-BA2F-AD6BD4C3F377}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaRNegocio\CapaRNegocio.csproj">
       <Project>{ffd9f12b-b8f0-4be7-b8e5-b02c381a6a26}</Project>
       <Name>CapaRNegocio</Name>
