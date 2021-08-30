@@ -26,7 +26,11 @@ namespace CapaRNegocio
         }
         public void crear_user(string nombre, string cedula, string user, string pssw, string email, string telf, string tusu)
         {
-            objetoCD.insertar(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf), Convert.ToInt32(tusu));
+            objetoCD.insertarAdm(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf), Convert.ToInt32(tusu));
+        }
+        public void crear_userUS(string nombre, string cedula, string user, string pssw, string email, string telf)
+        {
+            objetoCD.insertarUs(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf));
         }
         public void editar_user(string nombre, string cedula, string user, string pssw, string email, string telf, string tusu, string id)
         {
@@ -35,10 +39,6 @@ namespace CapaRNegocio
         public void eliminar_user(string id)
         {
             objetoCD.eliminar(Convert.ToInt32(id));
-        }
-        public void login_user(string user, string pssw)
-        {
-            objetoCD.Logueo(user, pssw);
         }
     }
 }

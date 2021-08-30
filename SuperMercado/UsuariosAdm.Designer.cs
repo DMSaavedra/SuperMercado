@@ -33,6 +33,14 @@ namespace SuperMercado
             this.pctCerrar = new System.Windows.Forms.PictureBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtContrasenia = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.txtNombresComp = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,14 +52,6 @@ namespace SuperMercado
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNombresComp = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContrasenia = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel1.SuspendLayout();
@@ -106,12 +106,83 @@ namespace SuperMercado
             this.panel1.Size = new System.Drawing.Size(656, 248);
             this.panel1.TabIndex = 2;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(67)))), ((int)(((byte)(55)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnEliminar.Location = new System.Drawing.Point(313, 206);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 30);
+            this.btnEliminar.TabIndex = 37;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // cmbTipoUsuario
+            // 
+            this.cmbTipoUsuario.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.cmbTipoUsuario.FormattingEnabled = true;
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(420, 163);
+            this.cmbTipoUsuario.Name = "cmbTipoUsuario";
+            this.cmbTipoUsuario.Size = new System.Drawing.Size(171, 25);
+            this.cmbTipoUsuario.TabIndex = 36;
+            this.cmbTipoUsuario.Text = "Seleccione";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.txtTelefono.Location = new System.Drawing.Point(420, 125);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(171, 22);
+            this.txtTelefono.TabIndex = 34;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.txtCorreo.Location = new System.Drawing.Point(104, 125);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(171, 22);
+            this.txtCorreo.TabIndex = 33;
+            // 
+            // txtContrasenia
+            // 
+            this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.txtContrasenia.Location = new System.Drawing.Point(420, 86);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(171, 22);
+            this.txtContrasenia.TabIndex = 32;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.txtUsuario.Location = new System.Drawing.Point(104, 87);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(171, 22);
+            this.txtUsuario.TabIndex = 31;
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.txtCedula.Location = new System.Drawing.Point(420, 51);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(171, 22);
+            this.txtCedula.TabIndex = 30;
+            // 
+            // txtNombresComp
+            // 
+            this.txtNombresComp.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.txtNombresComp.Location = new System.Drawing.Point(104, 49);
+            this.txtNombresComp.Name = "txtNombresComp";
+            this.txtNombresComp.Size = new System.Drawing.Size(171, 22);
+            this.txtNombresComp.TabIndex = 29;
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(222, 206);
+            this.btnLimpiar.Location = new System.Drawing.Point(420, 206);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 30);
             this.btnLimpiar.TabIndex = 28;
@@ -124,7 +195,7 @@ namespace SuperMercado
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(153)))), ((int)(((byte)(84)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(318, 206);
+            this.btnEditar.Location = new System.Drawing.Point(214, 206);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 30);
             this.btnEditar.TabIndex = 11;
@@ -225,74 +296,6 @@ namespace SuperMercado
             this.label4.Size = new System.Drawing.Size(77, 19);
             this.label4.TabIndex = 17;
             this.label4.Text = "Usuario : ";
-            // 
-            // txtNombresComp
-            // 
-            this.txtNombresComp.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.txtNombresComp.Location = new System.Drawing.Point(104, 49);
-            this.txtNombresComp.Name = "txtNombresComp";
-            this.txtNombresComp.Size = new System.Drawing.Size(171, 22);
-            this.txtNombresComp.TabIndex = 29;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.txtCedula.Location = new System.Drawing.Point(420, 51);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(171, 22);
-            this.txtCedula.TabIndex = 30;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.txtUsuario.Location = new System.Drawing.Point(104, 87);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(171, 22);
-            this.txtUsuario.TabIndex = 31;
-            // 
-            // txtContrasenia
-            // 
-            this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.txtContrasenia.Location = new System.Drawing.Point(420, 86);
-            this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(171, 22);
-            this.txtContrasenia.TabIndex = 32;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.txtCorreo.Location = new System.Drawing.Point(104, 125);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(171, 22);
-            this.txtCorreo.TabIndex = 33;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.txtTelefono.Location = new System.Drawing.Point(420, 125);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(171, 22);
-            this.txtTelefono.TabIndex = 34;
-            // 
-            // cmbTipoUsuario
-            // 
-            this.cmbTipoUsuario.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.cmbTipoUsuario.FormattingEnabled = true;
-            this.cmbTipoUsuario.Location = new System.Drawing.Point(420, 163);
-            this.cmbTipoUsuario.Name = "cmbTipoUsuario";
-            this.cmbTipoUsuario.Size = new System.Drawing.Size(171, 25);
-            this.cmbTipoUsuario.TabIndex = 36;
-            this.cmbTipoUsuario.Text = "Seleccione";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(420, 210);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 37;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // UsuariosAdm
             // 

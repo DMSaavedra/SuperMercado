@@ -113,6 +113,7 @@ namespace SuperMercado
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            abriFormHijo(new ProductosUS());
             //Codigo...
             hideSubMenu();
         }

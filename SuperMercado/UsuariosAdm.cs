@@ -116,6 +116,7 @@ namespace SuperMercado
                     {
                         objetoCN.editar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, idTusu.ToString(), idUsuario);
                         MessageBox.Show("Se edito correctamente..!");
+                        btnRegistrar.Enabled = true;
                         verUsuarios();
                         limpiar();
                     }

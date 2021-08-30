@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,10 @@ namespace SuperMercado
     public partial class Form1 : Form
     {
         private CN_Usuarios objetoCN = new CN_Usuarios();
+
+        //Creamos la Conexion
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-M0HDS4L2\DBSEGUNDO;Initial Catalog=SuperMercado;Integrated Security=True");
+
 
         public Form1()
         {
@@ -37,34 +42,69 @@ namespace SuperMercado
             txtUsuario.Text = txtContraseña.Text = "";
         }
 
-        //public void logeo(string usu, string psswd)
-        //{
-        //    string nombre = txtUsuario.Text;
-        //    string contra = txtContraseña.Text;
+        public void Logueo(string UsuUsuario, string UsuContrasenia)
+        {
+            con.Open();
+            SqlCommand query = new SqlCommand("SELECT * FROM tblUsuarios WHERE UsuUsuario = @user", con);
+            query.Parameters.AddWithValue("user", UsuUsuario);
+            SqlDataAdapter sda = new SqlDataAdapter(query);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            con.Close();
 
-        //    if (nombre == "admin" && contra == "admin")
-        //    {
-        //        MessageBox.Show("Bienvenido ADMINISTRADOR  \n" + nombre);
+            if (dt.Rows.Count == 1)
+            {
+                con.Open();
+                SqlCommand query2 = new SqlCommand("SELECT UsuUsuario, UsuContrasenia, idTusu FROM tblUsuarios WHERE UsuUsuario = @user and UsuContrasenia = @passw", con);
+                query2.Parameters.AddWithValue("user", UsuUsuario);
+                query2.Parameters.AddWithValue("passw", UsuContrasenia);
+                SqlDataAdapter sda1 = new SqlDataAdapter(query2);
+                DataTable dt1 = new DataTable();
+                sda1.Fill(dt1);
+                con.Close();
 
-        //        this.Hide();
-        //        new Administrador().ShowDialog();
-        //        this.Close();
+                if (dt1.Rows.Count == 1)
+                {
+                    //Buscar Datos
+                    SqlCommand query3 = new SqlCommand("SELECT * FROM tblUsuarios WHERE UsuUsuario = @user", con);
+                    query3.Parameters.AddWithValue("user", UsuUsuario);
+                    con.Open();
+                    SqlDataReader registro = query3.ExecuteReader();
 
-        //    }
-        //    else if (nombre == "diego" && contra == "12345")
-        //    {
-        //        MessageBox.Show("Bienvenido USUARIO  \n" + nombre);
+                    if (dt1.Rows[0][2].ToString() == "1")
+                    {
+                        if (registro.Read())
+                        {
+                            string nom = registro["UsuNombreComp"].ToString();
+                            MessageBox.Show("Bienvenido al Sistema Administrador: \n" + nom);
 
-        //        this.Hide();
-        //        new InicioUs().ShowDialog();
-        //        this.Close();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Usuario o Contraseña Incorrectas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        limpiar();
-        //    }
-        //}
+                            this.Hide();
+                            new Administrador().ShowDialog();
+                            this.Close();
+
+                        }
+                        con.Close();
+                    }
+                    else if (dt1.Rows[0][2].ToString() == "3")
+                    {
+                        if (registro.Read())
+                        {
+                            string nom = registro["UsuNombreComp"].ToString();
+                            MessageBox.Show("Bienvenido al Sistema Usuario: \n" + nom);
+
+                            this.Hide();
+                            new InicioUs().ShowDialog();
+                            this.Close();
+                        }
+                        con.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Datos Incorrectos!!");
+            }
+        }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -74,7 +114,7 @@ namespace SuperMercado
             }
             else
             {
-                objetoCN.login_user(txtUsuario.Text, txtContraseña.Text);
+                Logueo(txtUsuario.Text, txtContraseña.Text);
                 limpiar();
             }
         }
