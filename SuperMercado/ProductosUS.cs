@@ -23,6 +23,7 @@ namespace SuperMercado
         }
         private void ProductosUS_Load(object sender, EventArgs e)
         {
+            lblTitulo.Visible = false;
             verProductos();
             verCmbCateg();
             verCmbMarca();
@@ -65,6 +66,42 @@ namespace SuperMercado
             }
         }
 
-        
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                MessageBox.Show("Debe Llenar Todos Los Campos!");
+            }
+            else if (dtpElab.Value == DateTime.Now)
+            {
+                MessageBox.Show("Debe Seleccionar una Fecha Diferente a la del Dia de Hoy");
+            }
+            else
+            {
+                if (lblTitulo.Text == "Nuevo")
+                {
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                    pctProducto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    try
+                    {
+                        objetoCN.crear_prod(txtNombre.Text, txtCantidad.Text, txtPCP.Text, txtPVP.Text, dtpElab.Value.ToString(), dtpExp.Value.ToString(), ms.GetBuffer(), cmbMarca.SelectedItem.ToString(), cmbCategoria.SelectedItem.ToString());
+                        MessageBox.Show("Se Guardo Correctamente!");
+                        limpiar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Datos no Guardados" + ex.Message);
+                        throw;
+                    }
+                }
+            }
+        }
+
+        private void limpiar()
+        {
+            dtpElab.Value = DateTime.Now;
+            dtpExp.Value = DateTime.Now;
+        }
     }
 }

@@ -57,6 +57,7 @@ namespace SuperMercado
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctCerrar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctProducto)).BeginInit();
@@ -76,6 +77,7 @@ namespace SuperMercado
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnEditar);
@@ -152,12 +154,14 @@ namespace SuperMercado
             this.btnRegistrar.TabIndex = 29;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // pctProducto
             // 
             this.pctProducto.Location = new System.Drawing.Point(153, 191);
             this.pctProducto.Name = "pctProducto";
             this.pctProducto.Size = new System.Drawing.Size(119, 79);
+            this.pctProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctProducto.TabIndex = 28;
             this.pctProducto.TabStop = false;
             // 
@@ -194,6 +198,8 @@ namespace SuperMercado
             // 
             this.dtpExp.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.dtpExp.Location = new System.Drawing.Point(383, 123);
+            this.dtpExp.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dtpExp.MinDate = new System.DateTime(2021, 7, 1, 0, 0, 0, 0);
             this.dtpExp.Name = "dtpExp";
             this.dtpExp.Size = new System.Drawing.Size(200, 22);
             this.dtpExp.TabIndex = 24;
@@ -202,6 +208,8 @@ namespace SuperMercado
             // 
             this.dtpElab.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.dtpElab.Location = new System.Drawing.Point(97, 124);
+            this.dtpElab.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dtpElab.MinDate = new System.DateTime(2021, 5, 1, 0, 0, 0, 0);
             this.dtpElab.Name = "dtpElab";
             this.dtpElab.Size = new System.Drawing.Size(200, 22);
             this.dtpElab.TabIndex = 23;
@@ -350,6 +358,16 @@ namespace SuperMercado
             this.dgvProductos.Size = new System.Drawing.Size(655, 178);
             this.dgvProductos.TabIndex = 4;
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(273, 35);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(14, 5);
+            this.lblTitulo.TabIndex = 33;
+            this.lblTitulo.Text = "Nuevo";
+            // 
             // ProductosUS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,5 +418,6 @@ namespace SuperMercado
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

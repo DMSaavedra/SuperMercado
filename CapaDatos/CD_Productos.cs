@@ -48,9 +48,23 @@ namespace CapaDatos
             return dt;
         }
 
-        public void insertar()
+        public void insertar(string nombre, int cantidad, decimal pcp, decimal pvp, DateTime fechaElab, DateTime fechaExp, Byte[] imagePrd, int categoria, int marca)
         {
-
+            cmd.Connection = con.abrir_conexion();
+            cmd.CommandText = "CrearProductos";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@PrdNombre", nombre);
+            cmd.Parameters.AddWithValue("@PrdCantidad", cantidad);
+            cmd.Parameters.AddWithValue("@PrdPrecioCompra", pcp);
+            cmd.Parameters.AddWithValue("@PrdPrecioVenta", pvp);
+            cmd.Parameters.AddWithValue("@PrdFechaElaborado", fechaElab);
+            cmd.Parameters.AddWithValue("@PrdFechaExpiracion", fechaExp);
+            cmd.Parameters.AddWithValue("@PrdImagen", imagePrd);
+            cmd.Parameters.AddWithValue("@idCatPrd", categoria);
+            cmd.Parameters.AddWithValue("@idMarcaPrd", marca);
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            con.cerrar_conexion();
         }
 
         public void editar()
