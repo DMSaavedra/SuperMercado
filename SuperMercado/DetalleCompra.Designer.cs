@@ -39,24 +39,37 @@ namespace SuperMercado
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlProductos = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dgvListaProductos = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnListaProds = new System.Windows.Forms.Button();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProdSelect = new System.Windows.Forms.DataGridView();
+            this.DtvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DtvCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DtvTotalU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DtvTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnComprar = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pnlProductos.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).BeginInit();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -136,11 +149,11 @@ namespace SuperMercado
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(250)))), ((int)(((byte)(241)))));
-            this.panel2.Controls.Add(this.btnEliminar);
+            this.panel2.Controls.Add(this.pnlProductos);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvProdSelect);
             this.panel2.Controls.Add(this.btnComprar);
-            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.lblTotal);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -149,6 +162,70 @@ namespace SuperMercado
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(707, 361);
             this.panel2.TabIndex = 24;
+            // 
+            // pnlProductos
+            // 
+            this.pnlProductos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProductos.Controls.Add(this.panel6);
+            this.pnlProductos.Controls.Add(this.panel5);
+            this.pnlProductos.Location = new System.Drawing.Point(89, 70);
+            this.pnlProductos.Name = "pnlProductos";
+            this.pnlProductos.Size = new System.Drawing.Size(524, 239);
+            this.pnlProductos.TabIndex = 26;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(250)))), ((int)(((byte)(241)))));
+            this.panel6.Controls.Add(this.dgvListaProductos);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 43);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(522, 194);
+            this.panel6.TabIndex = 25;
+            // 
+            // dgvListaProductos
+            // 
+            this.dgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaProductos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvListaProductos.Location = new System.Drawing.Point(13, 4);
+            this.dgvListaProductos.Name = "dgvListaProductos";
+            this.dgvListaProductos.Size = new System.Drawing.Size(497, 184);
+            this.dgvListaProductos.TabIndex = 0;
+            this.dgvListaProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaProductos_CellDoubleClick);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(250)))), ((int)(((byte)(241)))));
+            this.panel5.Controls.Add(this.linkLabel1);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(522, 43);
+            this.panel5.TabIndex = 24;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel1.Location = new System.Drawing.Point(469, 17);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(41, 16);
+            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Cerrar";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Listado De Productos";
             // 
             // panel3
             // 
@@ -219,20 +296,47 @@ namespace SuperMercado
             this.label5.TabIndex = 0;
             this.label5.Text = "Agregar Producto";
             // 
-            // dataGridView1
+            // dgvProdSelect
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(123, 107);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(454, 178);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvProdSelect.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProdSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdSelect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DtvNombre,
+            this.DtvCantidad,
+            this.DtvTotalU,
+            this.DtvTotal});
+            this.dgvProdSelect.Location = new System.Drawing.Point(123, 107);
+            this.dgvProdSelect.Name = "dgvProdSelect";
+            this.dgvProdSelect.Size = new System.Drawing.Size(454, 178);
+            this.dgvProdSelect.TabIndex = 4;
+            this.dgvProdSelect.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdSelect_CellDoubleClick);
+            // 
+            // DtvNombre
+            // 
+            this.DtvNombre.HeaderText = "DtvNombre";
+            this.DtvNombre.Name = "DtvNombre";
+            // 
+            // DtvCantidad
+            // 
+            this.DtvCantidad.HeaderText = "DtvCantidad";
+            this.DtvCantidad.Name = "DtvCantidad";
+            // 
+            // DtvTotalU
+            // 
+            this.DtvTotalU.HeaderText = "DtvTotalU";
+            this.DtvTotalU.Name = "DtvTotalU";
+            // 
+            // DtvTotal
+            // 
+            this.DtvTotal.HeaderText = "DtvTotal";
+            this.DtvTotal.Name = "DtvTotal";
             // 
             // btnComprar
             // 
             this.btnComprar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(153)))), ((int)(((byte)(84)))));
             this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComprar.Location = new System.Drawing.Point(374, 324);
+            this.btnComprar.Location = new System.Drawing.Point(303, 324);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(75, 25);
             this.btnComprar.TabIndex = 3;
@@ -240,15 +344,15 @@ namespace SuperMercado
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
-            // label10
+            // lblTotal
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(548, 295);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 17);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "$$$";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(548, 295);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(29, 17);
+            this.lblTotal.TabIndex = 2;
+            this.lblTotal.Text = "$$$";
             // 
             // label9
             // 
@@ -270,19 +374,6 @@ namespace SuperMercado
             this.label4.TabIndex = 0;
             this.label4.Text = "DETALLE DE COMPRA";
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.btnEliminar.Location = new System.Drawing.Point(279, 324);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 25);
-            this.btnEliminar.TabIndex = 25;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // DetalleCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,10 +394,15 @@ namespace SuperMercado
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlProductos.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdSelect)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,11 +415,11 @@ namespace SuperMercado
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnComprar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProdSelect;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.NumericUpDown numCantidad;
         private System.Windows.Forms.Label label6;
@@ -331,6 +427,15 @@ namespace SuperMercado
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pctSalir;
         private System.Windows.Forms.Button btnListaProds;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Panel pnlProductos;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dgvListaProductos;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DtvNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DtvCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DtvTotalU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DtvTotal;
     }
 }
