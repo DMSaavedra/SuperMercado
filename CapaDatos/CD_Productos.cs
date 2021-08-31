@@ -28,6 +28,18 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable mostrarActivos()
+        {
+            cmd.Connection = con.abrir_conexion();
+            cmd.CommandText = "ListaProductosActivos";
+            cmd.CommandType = CommandType.StoredProcedure;
+            leer = cmd.ExecuteReader();
+            tabla.Load(leer);
+            con.cerrar_conexion();
+
+            return tabla;
+        }
+
         public DataTable CargarCmbMarcas()
         {
             SqlDataAdapter sda = new SqlDataAdapter("CargarCmbMarcas", con.abrir_conexion());

@@ -19,6 +19,13 @@ namespace CapaRNegocio
             return tabla;
         }
 
+        public DataTable mostrar_products_activos()
+        {
+            DataTable tabla = new DataTable();
+            tabla = objeoCD.mostrarActivos();
+            return tabla;
+        }
+
         public DataTable cargar_marcas()
         {
             DataTable tabla2 = new DataTable();

@@ -93,7 +93,7 @@ namespace SuperMercado
                             MessageBox.Show("Bienvenido al Sistema Usuario: \n" + nom);
 
                             this.Hide();
-                            new InicioUs().ShowDialog();
+                            new DetalleCompra().ShowDialog();
                             this.Close();
                         }
                         con.Close();

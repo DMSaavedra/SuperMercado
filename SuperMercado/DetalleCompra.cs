@@ -20,7 +20,7 @@ namespace SuperMercado
         private void pctSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new InicioUs().ShowDialog();
+            new ListaProductos().ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -37,6 +37,22 @@ namespace SuperMercado
         {
             this.Hide();
             new SmsCompra().ShowDialog();
+        }
+
+        private void pctSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form1().ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListaProds_Click(object sender, EventArgs e)
+        {
+            new ListaProductos().ShowDialog();
         }
     }
 }
