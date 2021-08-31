@@ -18,19 +18,14 @@ namespace CapaRNegocio
             tabla = objetoCD.mostrar();
             return tabla;
         }
-        public DataTable cargar_provs()
+
+        public void crear_mrc(string marca)
         {
-            DataTable tabla2 = new DataTable();
-            tabla2 = objetoCD.cargarCmbProveedores();
-            return tabla2;
+            objetoCD.insertar(marca);
         }
-        public void crear_mrc(string marca, string proveedor)
+        public void editar_mrc(string marca, string id)
         {
-            objetoCD.insertar(marca, Convert.ToInt32(proveedor));
-        }
-        public void editar_mrc(string marca, string proveedor, string id)
-        {
-            objetoCD.editar(marca, Convert.ToInt32(proveedor), Convert.ToInt32(id));
+            objetoCD.editar(marca, Convert.ToInt32(id));
         }
         public void eliminar_mrc(string id)
         {

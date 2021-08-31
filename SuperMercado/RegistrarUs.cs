@@ -24,7 +24,7 @@ namespace SuperMercado
 
         public void limpiar()
         {
-            txtNombresComp.Text = txtCedula.Text = txtUsuario.Text = txtContrasenia.Text = txtCorreo.Text = txtTelefono.Text = "";
+            txtNombresComp.Text = txtCedula.Text = txtContrasenia.Text = txtTelefono.Text = "";
             //cmbTipoUsuario.Text = "Seleccione";
             editar = false;
         }
@@ -36,8 +36,7 @@ namespace SuperMercado
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombresComp.Text) || string.IsNullOrEmpty(txtCedula.Text) ||
-                string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasenia.Text) ||
-                string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtTelefono.Text))
+                string.IsNullOrEmpty(txtContrasenia.Text) || string.IsNullOrEmpty(txtTelefono.Text))
             {
                 MessageBox.Show("No puede dejar campos vacios");
             }
@@ -47,7 +46,8 @@ namespace SuperMercado
                 {
                     try
                     {
-                        objetoCN.crear_userUS(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text);
+                        objetoCN.crear_userUS(txtNombresComp.Text, txtCedula.Text, txtContrasenia.Text, txtTelefono.Text);
+                        //objetoCN.crear_userUS(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text);
                         MessageBox.Show("Usuario Creado con Exito!!");
                         limpiar();
                         //this.Hide();
@@ -68,8 +68,6 @@ namespace SuperMercado
             this.Hide();
             new Form1().ShowDialog();
         }
-
-        
 
         private void txtNombresComp_KeyPress_1(object sender, KeyPressEventArgs e)
         {

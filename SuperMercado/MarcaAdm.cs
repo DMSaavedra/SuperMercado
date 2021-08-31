@@ -30,7 +30,6 @@ namespace SuperMercado
         private void MarcaAdm_Load(object sender, EventArgs e)
         {
             verMarcas();
-            verCmbProveedores();
         }
 
         private void verMarcas()
@@ -39,25 +38,11 @@ namespace SuperMercado
             dgvMarca.DataSource = objeto.mostrar_mrc();
         }
 
-        private void verCmbProveedores()
-        {
-            CN_Marca objeto2 = new CN_Marca();
-            cmbProveedor.DataSource = objeto2.cargar_provs();
-            cmbProveedor.DisplayMember = "ProvNombre";
-            cmbProveedor.ValueMember = "idProveedor";
-        }
-
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            int idProveedor = Convert.ToInt32(cmbProveedor.SelectedValue.ToString());
-
             if (string.IsNullOrEmpty(txtMarca.Text))
             {
                 MessageBox.Show("Debe Llenar El Campo!");
-            }
-            else if (cmbProveedor.Text == "Seleccione") 
-            {
-                MessageBox.Show("Seleccione un Proveedor!");
             }
             else
             {
@@ -65,7 +50,7 @@ namespace SuperMercado
                 {
                     try
                     {
-                        objetoCN.crear_mrc(txtMarca.Text, idProveedor.ToString());
+                        objetoCN.crear_mrc(txtMarca.Text);
                         MessageBox.Show("Se Guardo Correctamente!");
                         verMarcas();
                         limpiar();
@@ -82,7 +67,6 @@ namespace SuperMercado
         private void limpiar()
         {
             txtMarca.Clear();
-            cmbProveedor.Text = "Seleccione";
             idMarcaPrd = null;
             editar = false;
             btnRegistrar.Enabled = true;
@@ -95,7 +79,6 @@ namespace SuperMercado
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int idProveedor = Convert.ToInt32(cmbProveedor.SelectedValue.ToString());
 
             if (string.IsNullOrEmpty(txtMarca.Text))
             {
@@ -107,7 +90,7 @@ namespace SuperMercado
                 {
                     try
                     {
-                        objetoCN.editar_mrc(txtMarca.Text, idProveedor.ToString(), idMarcaPrd);
+                        objetoCN.editar_mrc(txtMarca.Text, idMarcaPrd);
                         MessageBox.Show("Se edito correctamente..!");
                         verMarcas();
                         limpiar();
@@ -150,7 +133,6 @@ namespace SuperMercado
             {
                 editar = true;
                 txtMarca.Text = dgvMarca.CurrentRow.Cells["MrcPrdNombre"].Value.ToString();
-                cmbProveedor.SelectedValue = dgvMarca.CurrentRow.Cells["idProveedor"].Value.ToString();
                 idMarcaPrd = dgvMarca.CurrentRow.Cells["idMarcaPrd"].Value.ToString();
                 btnRegistrar.Enabled = false;
             }

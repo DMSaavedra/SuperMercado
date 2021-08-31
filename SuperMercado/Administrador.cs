@@ -132,7 +132,7 @@ namespace SuperMercado
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            abriFormHijo(new ProveedoresAdm());
+            //abriFormHijo(new ProveedoresAdm());
             //Codigo...
             hideSubMenu();
         }

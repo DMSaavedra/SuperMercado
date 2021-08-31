@@ -33,8 +33,6 @@ namespace SuperMercado
             this.pctCerrar = new System.Windows.Forms.PictureBox();
             this.dgvMarca = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbProveedor = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -72,8 +70,6 @@ namespace SuperMercado
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cmbProveedor);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.btnEditar);
@@ -85,26 +81,6 @@ namespace SuperMercado
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(656, 248);
             this.panel1.TabIndex = 5;
-            // 
-            // cmbProveedor
-            // 
-            this.cmbProveedor.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(411, 46);
-            this.cmbProveedor.Name = "cmbProveedor";
-            this.cmbProveedor.Size = new System.Drawing.Size(171, 25);
-            this.cmbProveedor.TabIndex = 39;
-            this.cmbProveedor.Text = "Seleccione";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(309, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 19);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Proveedor :";
             // 
             // btnEliminar
             // 
@@ -220,7 +196,5 @@ namespace SuperMercado
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbProveedor;
     }
 }

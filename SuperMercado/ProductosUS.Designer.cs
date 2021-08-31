@@ -32,22 +32,20 @@ namespace SuperMercado
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosUS));
             this.pctCerrar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.pctProducto = new System.Windows.Forms.PictureBox();
-            this.btnFoto = new System.Windows.Forms.Button();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.dtpExp = new System.Windows.Forms.DateTimePicker();
             this.dtpElab = new System.Windows.Forms.DateTimePicker();
             this.txtPVP = new System.Windows.Forms.TextBox();
-            this.txtPCP = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,9 +53,8 @@ namespace SuperMercado
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pctCerrar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctProducto)).BeginInit();
@@ -77,23 +74,21 @@ namespace SuperMercado
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnRegistrar);
             this.panel1.Controls.Add(this.pctProducto);
-            this.panel1.Controls.Add(this.btnFoto);
             this.panel1.Controls.Add(this.cmbMarca);
             this.panel1.Controls.Add(this.cmbCategoria);
             this.panel1.Controls.Add(this.dtpExp);
             this.panel1.Controls.Add(this.dtpElab);
             this.panel1.Controls.Add(this.txtPVP);
-            this.panel1.Controls.Add(this.txtPCP);
             this.panel1.Controls.Add(this.txtCantidad);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
@@ -101,18 +96,27 @@ namespace SuperMercado
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(12, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(656, 282);
             this.panel1.TabIndex = 3;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(273, 35);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(14, 5);
+            this.lblTitulo.TabIndex = 33;
+            this.lblTitulo.Text = "Nuevo";
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnLimpiar.Location = new System.Drawing.Point(441, 247);
+            this.btnLimpiar.Location = new System.Drawing.Point(308, 244);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 30);
             this.btnLimpiar.TabIndex = 32;
@@ -124,7 +128,7 @@ namespace SuperMercado
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(67)))), ((int)(((byte)(55)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnEliminar.Location = new System.Drawing.Point(343, 247);
+            this.btnEliminar.Location = new System.Drawing.Point(210, 244);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 30);
             this.btnEliminar.TabIndex = 31;
@@ -136,7 +140,7 @@ namespace SuperMercado
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(153)))), ((int)(((byte)(84)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnEditar.Location = new System.Drawing.Point(440, 206);
+            this.btnEditar.Location = new System.Drawing.Point(121, 244);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 30);
             this.btnEditar.TabIndex = 30;
@@ -148,7 +152,7 @@ namespace SuperMercado
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(153)))), ((int)(((byte)(84)))));
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnRegistrar.Location = new System.Drawing.Point(342, 206);
+            this.btnRegistrar.Location = new System.Drawing.Point(23, 244);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 30);
             this.btnRegistrar.TabIndex = 29;
@@ -158,29 +162,19 @@ namespace SuperMercado
             // 
             // pctProducto
             // 
-            this.pctProducto.Location = new System.Drawing.Point(153, 191);
+            this.pctProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctProducto.Location = new System.Drawing.Point(392, 158);
             this.pctProducto.Name = "pctProducto";
-            this.pctProducto.Size = new System.Drawing.Size(119, 79);
+            this.pctProducto.Size = new System.Drawing.Size(191, 116);
             this.pctProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctProducto.TabIndex = 28;
             this.pctProducto.TabStop = false;
-            // 
-            // btnFoto
-            // 
-            this.btnFoto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFoto.Location = new System.Drawing.Point(97, 207);
-            this.btnFoto.Name = "btnFoto";
-            this.btnFoto.Size = new System.Drawing.Size(39, 23);
-            this.btnFoto.TabIndex = 27;
-            this.btnFoto.Text = ". . .";
-            this.btnFoto.UseVisualStyleBackColor = true;
-            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
             // 
             // cmbMarca
             // 
             this.cmbMarca.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(359, 160);
+            this.cmbMarca.Location = new System.Drawing.Point(361, 120);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(171, 25);
             this.cmbMarca.TabIndex = 26;
@@ -189,7 +183,7 @@ namespace SuperMercado
             // 
             this.cmbCategoria.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(88, 160);
+            this.cmbCategoria.Location = new System.Drawing.Point(383, 81);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(171, 25);
             this.cmbCategoria.TabIndex = 25;
@@ -197,7 +191,7 @@ namespace SuperMercado
             // dtpExp
             // 
             this.dtpExp.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.dtpExp.Location = new System.Drawing.Point(383, 123);
+            this.dtpExp.Location = new System.Drawing.Point(87, 158);
             this.dtpExp.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
             this.dtpExp.MinDate = new System.DateTime(2021, 7, 1, 0, 0, 0, 0);
             this.dtpExp.Name = "dtpExp";
@@ -217,18 +211,10 @@ namespace SuperMercado
             // txtPVP
             // 
             this.txtPVP.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.txtPVP.Location = new System.Drawing.Point(399, 85);
+            this.txtPVP.Location = new System.Drawing.Point(103, 84);
             this.txtPVP.Name = "txtPVP";
             this.txtPVP.Size = new System.Drawing.Size(171, 22);
             this.txtPVP.TabIndex = 22;
-            // 
-            // txtPCP
-            // 
-            this.txtPCP.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.txtPCP.Location = new System.Drawing.Point(116, 85);
-            this.txtPCP.Name = "txtPCP";
-            this.txtPCP.Size = new System.Drawing.Size(171, 22);
-            this.txtPCP.TabIndex = 21;
             // 
             // txtCantidad
             // 
@@ -257,21 +243,11 @@ namespace SuperMercado
             this.label1.TabIndex = 10;
             this.label1.Text = "REGISTRO PRODUCTOS";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 207);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 19);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Imagen  : ";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 166);
+            this.label9.Location = new System.Drawing.Point(308, 87);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 19);
             this.label9.TabIndex = 18;
@@ -281,7 +257,7 @@ namespace SuperMercado
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(309, 166);
+            this.label8.Location = new System.Drawing.Point(311, 126);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 19);
             this.label8.TabIndex = 18;
@@ -301,7 +277,7 @@ namespace SuperMercado
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(309, 127);
+            this.label7.Location = new System.Drawing.Point(13, 162);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 19);
             this.label7.TabIndex = 12;
@@ -311,7 +287,7 @@ namespace SuperMercado
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(309, 89);
+            this.label5.Location = new System.Drawing.Point(10, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 19);
             this.label5.TabIndex = 15;
@@ -337,16 +313,6 @@ namespace SuperMercado
             this.label6.TabIndex = 13;
             this.label6.Text = "Elaboracion : ";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 19);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Precio Compra : ";
-            // 
             // dgvProductos
             // 
             this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -358,15 +324,17 @@ namespace SuperMercado
             this.dgvProductos.Size = new System.Drawing.Size(655, 178);
             this.dgvProductos.TabIndex = 4;
             // 
-            // lblTitulo
+            // linkLabel1
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(273, 35);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(14, 5);
-            this.lblTitulo.TabIndex = 33;
-            this.lblTitulo.Text = "Nuevo";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.linkLabel1.Location = new System.Drawing.Point(315, 158);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(71, 19);
+            this.linkLabel1.TabIndex = 34;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Imagen";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // ProductosUS
             // 
@@ -400,24 +368,21 @@ namespace SuperMercado
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.PictureBox pctProducto;
-        private System.Windows.Forms.Button btnFoto;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.DateTimePicker dtpExp;
         private System.Windows.Forms.DateTimePicker dtpElab;
         private System.Windows.Forms.TextBox txtPVP;
-        private System.Windows.Forms.TextBox txtPCP;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

@@ -24,17 +24,20 @@ namespace CapaRNegocio
             tabla2 = objetoCD.CargarCmbTipoUsario();
             return tabla2;
         }
-        public void crear_user(string nombre, string cedula, string user, string pssw, string email, string telf, string tusu)
+        public void crear_userAdm(string nombre, string cedula, string pssw, string telf, string tusu)
         {
-            objetoCD.insertarAdm(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf), Convert.ToInt32(tusu));
+            objetoCD.insertarAdm(nombre, Convert.ToInt32(cedula), pssw, Convert.ToInt32(telf), Convert.ToInt32(tusu));
+            //objetoCD.insertarAdm(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf), Convert.ToInt32(tusu));
         }
-        public void crear_userUS(string nombre, string cedula, string user, string pssw, string email, string telf)
+        public void crear_userUS(string nombre, string cedula, string pssw, string telf)
         {
-            objetoCD.insertarUs(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf));
+            objetoCD.insertarUs(nombre, Convert.ToInt32(cedula), pssw, Convert.ToInt32(telf));
+            //objetoCD.insertarUs(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf));
         }
-        public void editar_user(string nombre, string cedula, string user, string pssw, string email, string telf, string tusu, string id)
+        public void editar_user(string nombre, string cedula, string pssw, string telf, string tusu, string id)
         {
-            objetoCD.editar(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf), Convert.ToInt32(tusu), Convert.ToInt32(id));
+            objetoCD.editar(nombre, Convert.ToInt32(cedula), pssw, Convert.ToInt32(telf), Convert.ToInt32(tusu), Convert.ToInt32(id));
+            //objetoCD.editar(nombre, Convert.ToInt32(cedula), user, pssw, email, Convert.ToInt32(telf), Convert.ToInt32(tusu), Convert.ToInt32(id));
         }
         public void eliminar_user(string id)
         {

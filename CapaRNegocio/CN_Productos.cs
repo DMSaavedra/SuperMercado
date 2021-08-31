@@ -32,10 +32,11 @@ namespace CapaRNegocio
             return tabla3;
         }
 
-        public void crear_prod(string nom, string cant, string pcp, string pvp, string fechaUn, string fechaDos, byte[] imagePrd, string marc, string catg)
+        public void crear_prod(string nom, string cant, string pvp, string fechaUn, string fechaDos, byte[] imagePrd, string marc, string catg)
         {
-            objeoCD.insertar(nom, Convert.ToInt32(cant), Convert.ToDecimal(pcp), Convert.ToDecimal(pvp), Convert.ToDateTime(fechaUn), Convert.ToDateTime(fechaDos), imagePrd, Convert.ToInt32(marc), Convert.ToInt32(catg));
+            objeoCD.insertar(nom, Convert.ToInt32(cant), Convert.ToDecimal(pvp), Convert.ToDateTime(fechaUn), Convert.ToDateTime(fechaDos), imagePrd, Convert.ToInt32(marc), Convert.ToInt32(catg));
         }
+
         public void editar_prod()
         {
 

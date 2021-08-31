@@ -52,8 +52,7 @@ namespace SuperMercado
             int idTusu = Convert.ToInt32(cmbTipoUsuario.SelectedValue.ToString());
 
             if (string.IsNullOrEmpty(txtNombresComp.Text) && string.IsNullOrEmpty(txtCedula.Text) &&
-                string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtContrasenia.Text) &&
-                string.IsNullOrEmpty(txtCorreo.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+                string.IsNullOrEmpty(txtContrasenia.Text) && string.IsNullOrEmpty(txtTelefono.Text))
             {
                 MessageBox.Show("Debe Llenar El Campo!");
             }
@@ -68,7 +67,7 @@ namespace SuperMercado
                 {
                     try
                     {
-                        objetoCN.crear_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, idTusu.ToString());
+                        objetoCN.crear_userAdm(txtNombresComp.Text, txtCedula.Text, txtContrasenia.Text, txtTelefono.Text, idTusu.ToString());
                         MessageBox.Show("Se Guardo Correctamente!");
                         verUsuarios();
                         limpiar();
@@ -91,9 +90,7 @@ namespace SuperMercado
         {
             txtNombresComp.Clear();
             txtCedula.Clear();
-            txtUsuario.Clear();
             txtContrasenia.Clear();
-            txtCorreo.Clear();
             txtTelefono.Clear();
             cmbTipoUsuario.Text = "Seleccione";
         }
@@ -103,8 +100,7 @@ namespace SuperMercado
             int idTusu = Convert.ToInt32(cmbTipoUsuario.SelectedValue.ToString());
 
             if (string.IsNullOrEmpty(txtNombresComp.Text) && string.IsNullOrEmpty(txtCedula.Text) &&
-                string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtContrasenia.Text) &&
-                string.IsNullOrEmpty(txtCorreo.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+                string.IsNullOrEmpty(txtContrasenia.Text) && string.IsNullOrEmpty(txtTelefono.Text))
             {
                 MessageBox.Show("De Doble Click en una FILA de la tabla, para editar datos");
             }
@@ -114,7 +110,8 @@ namespace SuperMercado
                 {
                     try
                     {
-                        objetoCN.editar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, idTusu.ToString(), idUsuario);
+                        objetoCN.editar_user(txtNombresComp.Text, txtCedula.Text, txtContrasenia.Text, txtTelefono.Text, idTusu.ToString(), idUsuario);
+                        //objetoCN.editar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, idTusu.ToString(), idUsuario);
                         MessageBox.Show("Se edito correctamente..!");
                         btnRegistrar.Enabled = true;
                         verUsuarios();
@@ -132,8 +129,7 @@ namespace SuperMercado
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombresComp.Text) && string.IsNullOrEmpty(txtCedula.Text) &&
-                string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtContrasenia.Text) &&
-                string.IsNullOrEmpty(txtCorreo.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+                string.IsNullOrEmpty(txtContrasenia.Text) && string.IsNullOrEmpty(txtTelefono.Text))
             {
                 MessageBox.Show("De Doble Click en una FILA de la tabla, para ELIMINAR datos");
             }
@@ -142,6 +138,7 @@ namespace SuperMercado
                 try
                 {
                     objetoCN.eliminar_user(idUsuario);
+                    //objetoCN.eliminar_user(idUsuario);
                     MessageBox.Show("Registro Eliminado!");
                     verUsuarios();
                     limpiar();
@@ -161,9 +158,7 @@ namespace SuperMercado
                 editar = true;
                 txtNombresComp.Text = dgvUsuarios.CurrentRow.Cells["UsuNombreComp"].Value.ToString();
                 txtCedula.Text = dgvUsuarios.CurrentRow.Cells["UsuCedula"].Value.ToString();
-                txtUsuario.Text = dgvUsuarios.CurrentRow.Cells["UsuUsuario"].Value.ToString();
                 txtContrasenia.Text = dgvUsuarios.CurrentRow.Cells["UsuContrasenia"].Value.ToString();
-                txtCorreo.Text = dgvUsuarios.CurrentRow.Cells["UsuCorreo"].Value.ToString();
                 txtTelefono.Text = dgvUsuarios.CurrentRow.Cells["UsuTelefono"].Value.ToString();
                 cmbTipoUsuario.SelectedValue = dgvUsuarios.CurrentRow.Cells["idTusu"].Value.ToString();
                 idUsuario = dgvUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString();

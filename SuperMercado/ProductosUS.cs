@@ -56,25 +56,14 @@ namespace SuperMercado
             this.Close();
         }
 
-        private void btnFoto_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog fo = new OpenFileDialog();
-            DialogResult dr = fo.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                pctProducto.Image = Image.FromFile(fo.FileName);
-            }
-        }
-
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            int idMarcaPrd = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
+            int idCatPrd = Convert.ToInt32(cmbCategoria.SelectedValue.ToString());
+
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 MessageBox.Show("Debe Llenar Todos Los Campos!");
-            }
-            else if (dtpElab.Value == DateTime.Now)
-            {
-                MessageBox.Show("Debe Seleccionar una Fecha Diferente a la del Dia de Hoy");
             }
             else
             {
@@ -85,7 +74,7 @@ namespace SuperMercado
 
                     try
                     {
-                        objetoCN.crear_prod(txtNombre.Text, txtCantidad.Text, txtPCP.Text, txtPVP.Text, dtpElab.Value.ToString(), dtpExp.Value.ToString(), ms.GetBuffer(), cmbMarca.SelectedItem.ToString(), cmbCategoria.SelectedItem.ToString());
+                        objetoCN.crear_prod(txtNombre.Text, txtCantidad.Text, txtPVP.Text, dtpElab.Value.ToString(), dtpExp.Value.ToString(), ms.GetBuffer(), idMarcaPrd.ToString(), idCatPrd.ToString());
                         MessageBox.Show("Se Guardo Correctamente!");
                         limpiar();
                     }
@@ -100,8 +89,23 @@ namespace SuperMercado
 
         private void limpiar()
         {
+            txtNombre.Clear();
+            txtCantidad.Clear();
+            txtPVP.Clear();
             dtpElab.Value = DateTime.Now;
             dtpExp.Value = DateTime.Now;
+            cmbMarca.Text = "Seleccione";
+            cmbCategoria.Text = "Seleccione";
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog fo = new OpenFileDialog();
+            DialogResult dr = fo.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                pctProducto.Image = Image.FromFile(fo.FileName);
+            }
         }
     }
 }

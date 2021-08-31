@@ -20,7 +20,8 @@ namespace CapaDatos
         public DataTable mostrar()
         {
             cmd.Connection = con.abrir_conexion();
-            cmd.CommandText = "ListaUsuario";
+            //cmd.CommandText = "ListaUsuario";
+            cmd.CommandText = "ListaUsuarioActivos";
             cmd.CommandType = CommandType.StoredProcedure;
             leer = cmd.ExecuteReader();
             tabla.Load(leer);
@@ -38,16 +39,14 @@ namespace CapaDatos
 
             return dt;
         }
-        public void insertarAdm(string UsuNombreComp, int UsuCedula, string UsuUsuario, string UsuContrasenia, string UsuCorreo, int UsuTelefono, int idTusu)
+        public void insertarAdm(string UsuNombreComp, int UsuCedula, string UsuContrasenia, int UsuTelefono, int idTusu)
         {
             cmd.Connection = con.abrir_conexion();
-            cmd.CommandText = "CrearUsuario";
+            cmd.CommandText = "CrearUsuarioAdm";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UsuNombreComp", UsuNombreComp);
             cmd.Parameters.AddWithValue("@UsuCedula", UsuCedula);
-            cmd.Parameters.AddWithValue("@UsuUsuario", UsuUsuario);
             cmd.Parameters.AddWithValue("@UsuContrasenia", UsuContrasenia);
-            cmd.Parameters.AddWithValue("@UsuCorreo", UsuCorreo);
             cmd.Parameters.AddWithValue("@UsuTelefono", UsuTelefono);
             cmd.Parameters.AddWithValue("@idTusu", idTusu);
             cmd.ExecuteNonQuery();
@@ -55,32 +54,28 @@ namespace CapaDatos
             con.cerrar_conexion();
         }
 
-        public void insertarUs(string UsuNombreComp, int UsuCedula, string UsuUsuario, string UsuContrasenia, string UsuCorreo, int UsuTelefono)
+        public void insertarUs(string UsuNombreComp, int UsuCedula, string UsuContrasenia, int UsuTelefono)
         {
             cmd.Connection = con.abrir_conexion();
-            cmd.CommandText = "CrearUsuarioUS";
+            cmd.CommandText = "CrearUsuario";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UsuNombreComp", UsuNombreComp);
             cmd.Parameters.AddWithValue("@UsuCedula", UsuCedula);
-            cmd.Parameters.AddWithValue("@UsuUsuario", UsuUsuario);
             cmd.Parameters.AddWithValue("@UsuContrasenia", UsuContrasenia);
-            cmd.Parameters.AddWithValue("@UsuCorreo", UsuCorreo);
             cmd.Parameters.AddWithValue("@UsuTelefono", UsuTelefono);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             con.cerrar_conexion();
         }
 
-        public void editar(string UsuNombreComp, int UsuCedula, string UsuUsuario, string UsuContrasenia, string UsuCorreo, int UsuTelefono, int idTusu, int idUsuario)
+        public void editar(string UsuNombreComp, int UsuCedula, string UsuContrasenia, int UsuTelefono, int idTusu, int idUsuario)
         {
             cmd.Connection = con.abrir_conexion();
             cmd.CommandText = "EditarUsuario";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UsuNombreComp", UsuNombreComp);
             cmd.Parameters.AddWithValue("@UsuCedula", UsuCedula);
-            cmd.Parameters.AddWithValue("@UsuUsuario", UsuUsuario);
             cmd.Parameters.AddWithValue("@UsuContrasenia", UsuContrasenia);
-            cmd.Parameters.AddWithValue("@UsuCorreo", UsuCorreo);
             cmd.Parameters.AddWithValue("@UsuTelefono", UsuTelefono);
             cmd.Parameters.AddWithValue("@idTusu", idTusu);
             cmd.Parameters.AddWithValue("@idUsuario", idUsuario);

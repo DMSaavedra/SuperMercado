@@ -131,6 +131,7 @@ namespace SuperMercado
                 editar = true;
                 txtCategoria.Text = dgvCategorias.CurrentRow.Cells["CartPrdNombre"].Value.ToString();
                 idCatPrd = dgvCategorias.CurrentRow.Cells["idCatPrd"].Value.ToString();
+                btnRegistrar.Enabled = false;
             }
             else
             {
