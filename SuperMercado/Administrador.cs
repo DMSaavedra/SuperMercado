@@ -32,8 +32,6 @@ namespace SuperMercado
         {
             pnlSbmUsuarios.Visible = false;
             pnlSbmProductos.Visible = false;
-            pnlSbmProveedores.Visible = false;
-            pnlSbmVentas.Visible = false;
         }
 
         private void hideSubMenu()
@@ -45,14 +43,6 @@ namespace SuperMercado
             if (pnlSbmProductos.Visible == true)
             {
                 pnlSbmProductos.Visible = false;
-            }
-            if (pnlSbmProveedores.Visible == true)
-            {
-                pnlSbmProveedores.Visible = false;
-            }
-            if (pnlSbmVentas.Visible == true)
-            {
-                pnlSbmVentas.Visible = false;
             }
         }
 
@@ -125,17 +115,6 @@ namespace SuperMercado
             hideSubMenu();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pnlSbmProveedores);
-        }
-
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            //abriFormHijo(new ProveedoresAdm());
-            //Codigo...
-            hideSubMenu();
-        }
 
         private void btnMarcas_Click(object sender, EventArgs e)
         {
@@ -146,7 +125,7 @@ namespace SuperMercado
 
         private void button5_Click(object sender, EventArgs e)
         {
-            showSubMenu(pnlSbmVentas);
+            //showSubMenu(pnlSbmVentas);
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
@@ -171,6 +150,12 @@ namespace SuperMercado
             this.Hide();
             new Form1().ShowDialog();
             this.Close();
+        }
+
+        private void btnMarcas_Click_1(object sender, EventArgs e)
+        {
+            abriFormHijo(new MarcaAdm());
+            hideSubMenu();
         }
     }
 }

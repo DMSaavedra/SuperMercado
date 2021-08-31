@@ -66,14 +66,34 @@ namespace CapaDatos
             con.cerrar_conexion();
         }
 
-        public void editar()
+        public void editar(string nombre, int cantidad, decimal pvp, DateTime fechaElab, DateTime fechaExp, Byte[] imagePrd, int categoria, int marca, int idProducto)
         {
-
+            cmd.Connection = con.abrir_conexion();
+            cmd.CommandText = "EditarProducto";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@PrdNombre", nombre);
+            cmd.Parameters.AddWithValue("@PrdCantidad", cantidad);
+            cmd.Parameters.AddWithValue("@PrdPrecioVenta", pvp);
+            cmd.Parameters.AddWithValue("@PrdFechaElaborado", fechaElab);
+            cmd.Parameters.AddWithValue("@PrdFechaExpiracion", fechaExp);
+            cmd.Parameters.AddWithValue("@PrdImagen", imagePrd);
+            cmd.Parameters.AddWithValue("@idCatPrd", categoria);
+            cmd.Parameters.AddWithValue("@idMarcaPrd", marca);
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            con.cerrar_conexion();
         }
 
-        public void eliminar()
+        public void eliminar(int idProducto)
         {
-
+            cmd.Connection = con.abrir_conexion();
+            cmd.CommandText = "EliminarUsuario";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            con.cerrar_conexion();
         }
     }
 }

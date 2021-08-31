@@ -32,6 +32,7 @@ namespace SuperMercado
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosUS));
             this.pctCerrar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@ namespace SuperMercado
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lblTituloDos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctCerrar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctProducto)).BeginInit();
@@ -74,6 +75,7 @@ namespace SuperMercado
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblTituloDos);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.btnLimpiar);
@@ -101,6 +103,18 @@ namespace SuperMercado
             this.panel1.Size = new System.Drawing.Size(656, 282);
             this.panel1.TabIndex = 3;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.linkLabel1.Location = new System.Drawing.Point(309, 158);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(71, 19);
+            this.linkLabel1.TabIndex = 34;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Imagen";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -122,6 +136,7 @@ namespace SuperMercado
             this.btnLimpiar.TabIndex = 32;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -134,6 +149,7 @@ namespace SuperMercado
             this.btnEliminar.TabIndex = 31;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -146,6 +162,7 @@ namespace SuperMercado
             this.btnEditar.TabIndex = 30;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnRegistrar
             // 
@@ -323,18 +340,17 @@ namespace SuperMercado
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(655, 178);
             this.dgvProductos.TabIndex = 4;
+            this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
             // 
-            // linkLabel1
+            // lblTituloDos
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.linkLabel1.Location = new System.Drawing.Point(315, 158);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(71, 19);
-            this.linkLabel1.TabIndex = 34;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Imagen";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lblTituloDos.AutoSize = true;
+            this.lblTituloDos.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloDos.Location = new System.Drawing.Point(292, 35);
+            this.lblTituloDos.Name = "lblTituloDos";
+            this.lblTituloDos.Size = new System.Drawing.Size(13, 5);
+            this.lblTituloDos.TabIndex = 35;
+            this.lblTituloDos.Text = "Editar";
             // 
             // ProductosUS
             // 
@@ -384,5 +400,6 @@ namespace SuperMercado
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label lblTituloDos;
     }
 }

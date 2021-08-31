@@ -37,13 +37,13 @@ namespace CapaRNegocio
             objeoCD.insertar(nom, Convert.ToInt32(cant), Convert.ToDecimal(pvp), Convert.ToDateTime(fechaUn), Convert.ToDateTime(fechaDos), imagePrd, Convert.ToInt32(marc), Convert.ToInt32(catg));
         }
 
-        public void editar_prod()
+        public void editar_prod(string nom, string cant, string pvp, string fechaUn, string fechaDos, byte[] imagePrd, string marc, string catg, string id)
         {
-
+            objeoCD.editar(nom, Convert.ToInt32(cant), Convert.ToDecimal(pvp), Convert.ToDateTime(fechaUn), Convert.ToDateTime(fechaDos), imagePrd, Convert.ToInt32(marc), Convert.ToInt32(catg), Convert.ToInt32(id));
         }
-        public void eliminar_prod()
+        public void eliminar_prod(string id)
         {
-
+            objeoCD.eliminar(Convert.ToInt32(id));
         }
     }
 }

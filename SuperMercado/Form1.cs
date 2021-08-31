@@ -39,14 +39,14 @@ namespace SuperMercado
 
         public void limpiar()
         {
-            txtUsuario.Text = txtContraseña.Text = "";
+            txtCedula.Text = txtContraseña.Text = "";
         }
 
-        public void Logueo(string UsuUsuario, string UsuContrasenia)
+        public void Logueo(string UsuCedula, string UsuContrasenia)
         {
             con.Open();
-            SqlCommand query = new SqlCommand("SELECT * FROM tblUsuarios WHERE UsuUsuario = @user", con);
-            query.Parameters.AddWithValue("user", UsuUsuario);
+            SqlCommand query = new SqlCommand("SELECT * FROM tblUsuarios WHERE UsuCedula = @ced", con);
+            query.Parameters.AddWithValue("ced", UsuCedula);
             SqlDataAdapter sda = new SqlDataAdapter(query);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -55,8 +55,8 @@ namespace SuperMercado
             if (dt.Rows.Count == 1)
             {
                 con.Open();
-                SqlCommand query2 = new SqlCommand("SELECT UsuUsuario, UsuContrasenia, idTusu FROM tblUsuarios WHERE UsuUsuario = @user and UsuContrasenia = @passw", con);
-                query2.Parameters.AddWithValue("user", UsuUsuario);
+                SqlCommand query2 = new SqlCommand("SELECT UsuCedula, UsuContrasenia, idTusu FROM tblUsuarios WHERE UsuCedula = @ced and UsuContrasenia = @passw", con);
+                query2.Parameters.AddWithValue("ced", UsuCedula);
                 query2.Parameters.AddWithValue("passw", UsuContrasenia);
                 SqlDataAdapter sda1 = new SqlDataAdapter(query2);
                 DataTable dt1 = new DataTable();
@@ -66,8 +66,8 @@ namespace SuperMercado
                 if (dt1.Rows.Count == 1)
                 {
                     //Buscar Datos
-                    SqlCommand query3 = new SqlCommand("SELECT * FROM tblUsuarios WHERE UsuUsuario = @user", con);
-                    query3.Parameters.AddWithValue("user", UsuUsuario);
+                    SqlCommand query3 = new SqlCommand("SELECT * FROM tblUsuarios WHERE UsuCedula = @ced", con);
+                    query3.Parameters.AddWithValue("ced", UsuCedula);
                     con.Open();
                     SqlDataReader registro = query3.ExecuteReader();
 
@@ -97,24 +97,28 @@ namespace SuperMercado
                             this.Close();
                         }
                         con.Close();
-                    }
+                    }  
+                }
+                else
+                {
+                    MessageBox.Show("Datos Incorrectos!!");
                 }
             }
             else
             {
-                MessageBox.Show("Datos Incorrectos!!");
+                MessageBox.Show("Usuario No Encontrado");
             }
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContraseña.Text))
+            if (string.IsNullOrEmpty(txtCedula.Text) || string.IsNullOrEmpty(txtContraseña.Text))
             {
                 MessageBox.Show("No puede dejar campos vacios");
             }
             else
             {
-                Logueo(txtUsuario.Text, txtContraseña.Text);
+                Logueo(txtCedula.Text, txtContraseña.Text);
                 limpiar();
             }
         }

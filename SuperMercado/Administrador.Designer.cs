@@ -35,16 +35,10 @@ namespace SuperMercado
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblFechaHora = new System.Windows.Forms.Label();
             this.lblNomAdmin = new System.Windows.Forms.Label();
+            this.pctSalir = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnReportes = new System.Windows.Forms.Button();
-            this.pnlSbmVentas = new System.Windows.Forms.Panel();
-            this.btnDetalleVentas = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.pnlSbmProveedores = new System.Windows.Forms.Panel();
-            this.btnMarcas = new System.Windows.Forms.Button();
-            this.btnProveedores = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pnlSbmProductos = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
@@ -59,12 +53,11 @@ namespace SuperMercado
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pctSalir = new System.Windows.Forms.PictureBox();
+            this.btnMarcas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.pnlSbmVentas.SuspendLayout();
-            this.pnlSbmProveedores.SuspendLayout();
             this.pnlSbmProductos.SuspendLayout();
             this.pnlSbmUsuarios.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,7 +65,6 @@ namespace SuperMercado
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,10 +73,7 @@ namespace SuperMercado
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnReportes);
-            this.panel1.Controls.Add(this.pnlSbmVentas);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.pnlSbmProveedores);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.pnlSbmProductos);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.pnlSbmUsuarios);
@@ -104,7 +93,7 @@ namespace SuperMercado
             this.panel3.Controls.Add(this.pctSalir);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 612);
+            this.panel3.Location = new System.Drawing.Point(0, 476);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(221, 100);
             this.panel3.TabIndex = 10;
@@ -129,6 +118,17 @@ namespace SuperMercado
             this.lblNomAdmin.TabIndex = 1;
             this.lblNomAdmin.Text = "Diego";
             // 
+            // pctSalir
+            // 
+            this.pctSalir.Image = ((System.Drawing.Image)(resources.GetObject("pctSalir.Image")));
+            this.pctSalir.Location = new System.Drawing.Point(191, 55);
+            this.pctSalir.Name = "pctSalir";
+            this.pctSalir.Size = new System.Drawing.Size(30, 33);
+            this.pctSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctSalir.TabIndex = 0;
+            this.pctSalir.TabStop = false;
+            this.pctSalir.Click += new System.EventHandler(this.pctSalir_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -149,7 +149,7 @@ namespace SuperMercado
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReportes.Location = new System.Drawing.Point(0, 572);
+            this.btnReportes.Location = new System.Drawing.Point(0, 436);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -159,50 +159,6 @@ namespace SuperMercado
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.UseVisualStyleBackColor = true;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // pnlSbmVentas
-            // 
-            this.pnlSbmVentas.Controls.Add(this.btnDetalleVentas);
-            this.pnlSbmVentas.Controls.Add(this.btnVentas);
-            this.pnlSbmVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSbmVentas.Location = new System.Drawing.Point(0, 508);
-            this.pnlSbmVentas.Name = "pnlSbmVentas";
-            this.pnlSbmVentas.Size = new System.Drawing.Size(221, 64);
-            this.pnlSbmVentas.TabIndex = 8;
-            // 
-            // btnDetalleVentas
-            // 
-            this.btnDetalleVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDetalleVentas.FlatAppearance.BorderSize = 0;
-            this.btnDetalleVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(149)))), ((int)(((byte)(11)))));
-            this.btnDetalleVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalleVentas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleVentas.Location = new System.Drawing.Point(0, 30);
-            this.btnDetalleVentas.Name = "btnDetalleVentas";
-            this.btnDetalleVentas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnDetalleVentas.Size = new System.Drawing.Size(221, 30);
-            this.btnDetalleVentas.TabIndex = 0;
-            this.btnDetalleVentas.Text = "Detalle Ventas";
-            this.btnDetalleVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalleVentas.UseVisualStyleBackColor = true;
-            this.btnDetalleVentas.Click += new System.EventHandler(this.btnDetalleVentas_Click);
-            // 
-            // btnVentas
-            // 
-            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVentas.FlatAppearance.BorderSize = 0;
-            this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(149)))), ((int)(((byte)(11)))));
-            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVentas.Location = new System.Drawing.Point(0, 0);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnVentas.Size = new System.Drawing.Size(221, 30);
-            this.btnVentas.TabIndex = 0;
-            this.btnVentas.Text = "Ventas";
-            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // button5
             // 
@@ -214,7 +170,7 @@ namespace SuperMercado
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(0, 468);
+            this.button5.Location = new System.Drawing.Point(0, 396);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -225,79 +181,15 @@ namespace SuperMercado
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // pnlSbmProveedores
-            // 
-            this.pnlSbmProveedores.Controls.Add(this.btnMarcas);
-            this.pnlSbmProveedores.Controls.Add(this.btnProveedores);
-            this.pnlSbmProveedores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSbmProveedores.Location = new System.Drawing.Point(0, 403);
-            this.pnlSbmProveedores.Name = "pnlSbmProveedores";
-            this.pnlSbmProveedores.Size = new System.Drawing.Size(221, 65);
-            this.pnlSbmProveedores.TabIndex = 6;
-            // 
-            // btnMarcas
-            // 
-            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMarcas.FlatAppearance.BorderSize = 0;
-            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(149)))), ((int)(((byte)(11)))));
-            this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarcas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarcas.Location = new System.Drawing.Point(0, 30);
-            this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMarcas.Size = new System.Drawing.Size(221, 30);
-            this.btnMarcas.TabIndex = 0;
-            this.btnMarcas.Text = "Marcas de Productos";
-            this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarcas.UseVisualStyleBackColor = true;
-            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(149)))), ((int)(((byte)(11)))));
-            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.Location = new System.Drawing.Point(0, 0);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnProveedores.Size = new System.Drawing.Size(221, 30);
-            this.btnProveedores.TabIndex = 0;
-            this.btnProveedores.Text = "Proveedores";
-            this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.UseVisualStyleBackColor = true;
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(149)))), ((int)(((byte)(11)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(0, 363);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(221, 40);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "PROVEEDORES";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // pnlSbmProductos
             // 
+            this.pnlSbmProductos.Controls.Add(this.btnMarcas);
             this.pnlSbmProductos.Controls.Add(this.button4);
             this.pnlSbmProductos.Controls.Add(this.btnProductos);
             this.pnlSbmProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSbmProductos.Location = new System.Drawing.Point(0, 299);
             this.pnlSbmProductos.Name = "pnlSbmProductos";
-            this.pnlSbmProductos.Size = new System.Drawing.Size(221, 64);
+            this.pnlSbmProductos.Size = new System.Drawing.Size(221, 97);
             this.pnlSbmProductos.TabIndex = 4;
             // 
             // button4
@@ -312,7 +204,7 @@ namespace SuperMercado
             this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(221, 30);
             this.button4.TabIndex = 0;
-            this.button4.Text = "Categoria de Productos";
+            this.button4.Text = "Categorias";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -480,16 +372,22 @@ namespace SuperMercado
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pctSalir
+            // btnMarcas
             // 
-            this.pctSalir.Image = ((System.Drawing.Image)(resources.GetObject("pctSalir.Image")));
-            this.pctSalir.Location = new System.Drawing.Point(191, 55);
-            this.pctSalir.Name = "pctSalir";
-            this.pctSalir.Size = new System.Drawing.Size(30, 33);
-            this.pctSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctSalir.TabIndex = 0;
-            this.pctSalir.TabStop = false;
-            this.pctSalir.Click += new System.EventHandler(this.pctSalir_Click);
+            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMarcas.FlatAppearance.BorderSize = 0;
+            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(149)))), ((int)(((byte)(11)))));
+            this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarcas.Location = new System.Drawing.Point(0, 60);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnMarcas.Size = new System.Drawing.Size(221, 30);
+            this.btnMarcas.TabIndex = 1;
+            this.btnMarcas.Text = "Marcas";
+            this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMarcas.UseVisualStyleBackColor = true;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click_1);
             // 
             // Administrador
             // 
@@ -509,9 +407,8 @@ namespace SuperMercado
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.pnlSbmVentas.ResumeLayout(false);
-            this.pnlSbmProveedores.ResumeLayout(false);
             this.pnlSbmProductos.ResumeLayout(false);
             this.pnlSbmUsuarios.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -519,7 +416,6 @@ namespace SuperMercado
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -537,14 +433,7 @@ namespace SuperMercado
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel pnlSbmProveedores;
-        private System.Windows.Forms.Button btnMarcas;
-        private System.Windows.Forms.Button btnProveedores;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnReportes;
-        private System.Windows.Forms.Panel pnlSbmVentas;
-        private System.Windows.Forms.Button btnDetalleVentas;
-        private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblFechaHora;
@@ -554,5 +443,6 @@ namespace SuperMercado
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pctSalir;
+        private System.Windows.Forms.Button btnMarcas;
     }
 }

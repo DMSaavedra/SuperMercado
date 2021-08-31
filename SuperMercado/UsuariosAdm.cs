@@ -99,8 +99,7 @@ namespace SuperMercado
         {
             int idTusu = Convert.ToInt32(cmbTipoUsuario.SelectedValue.ToString());
 
-            if (string.IsNullOrEmpty(txtNombresComp.Text) && string.IsNullOrEmpty(txtCedula.Text) &&
-                string.IsNullOrEmpty(txtContrasenia.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+            if (string.IsNullOrEmpty(txtNombresComp.Text) || string.IsNullOrEmpty(txtCedula.Text) || string.IsNullOrEmpty(txtContrasenia.Text) || string.IsNullOrEmpty(txtTelefono.Text))
             {
                 MessageBox.Show("De Doble Click en una FILA de la tabla, para editar datos");
             }
@@ -111,7 +110,6 @@ namespace SuperMercado
                     try
                     {
                         objetoCN.editar_user(txtNombresComp.Text, txtCedula.Text, txtContrasenia.Text, txtTelefono.Text, idTusu.ToString(), idUsuario);
-                        //objetoCN.editar_user(txtNombresComp.Text, txtCedula.Text, txtUsuario.Text, txtContrasenia.Text, txtCorreo.Text, txtTelefono.Text, idTusu.ToString(), idUsuario);
                         MessageBox.Show("Se edito correctamente..!");
                         btnRegistrar.Enabled = true;
                         verUsuarios();
@@ -128,8 +126,8 @@ namespace SuperMercado
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombresComp.Text) && string.IsNullOrEmpty(txtCedula.Text) &&
-                string.IsNullOrEmpty(txtContrasenia.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+            if (string.IsNullOrEmpty(txtNombresComp.Text) || string.IsNullOrEmpty(txtCedula.Text) ||
+                string.IsNullOrEmpty(txtContrasenia.Text) || string.IsNullOrEmpty(txtTelefono.Text))
             {
                 MessageBox.Show("De Doble Click en una FILA de la tabla, para ELIMINAR datos");
             }
@@ -138,7 +136,6 @@ namespace SuperMercado
                 try
                 {
                     objetoCN.eliminar_user(idUsuario);
-                    //objetoCN.eliminar_user(idUsuario);
                     MessageBox.Show("Registro Eliminado!");
                     verUsuarios();
                     limpiar();

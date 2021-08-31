@@ -40,7 +40,7 @@ namespace SuperMercado
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -86,9 +86,9 @@ namespace SuperMercado
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(3, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 19);
+            this.label2.Size = new System.Drawing.Size(75, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Usuario :";
+            this.label2.Text = "Cedula :";
             // 
             // label3
             // 
@@ -118,7 +118,7 @@ namespace SuperMercado
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.txtContraseña);
-            this.panel2.Controls.Add(this.txtUsuario);
+            this.panel2.Controls.Add(this.txtCedula);
             this.panel2.Controls.Add(this.btnCancelar);
             this.panel2.Controls.Add(this.btnIngresar);
             this.panel2.Controls.Add(this.label1);
@@ -162,13 +162,14 @@ namespace SuperMercado
             this.txtContraseña.Size = new System.Drawing.Size(149, 24);
             this.txtContraseña.TabIndex = 10;
             // 
-            // txtUsuario
+            // txtCedula
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.txtUsuario.Location = new System.Drawing.Point(111, 63);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(149, 24);
-            this.txtUsuario.TabIndex = 9;
+            this.txtCedula.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtCedula.Location = new System.Drawing.Point(111, 63);
+            this.txtCedula.MaxLength = 10;
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(149, 24);
+            this.txtCedula.TabIndex = 9;
             // 
             // btnCancelar
             // 
@@ -233,7 +234,7 @@ namespace SuperMercado
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtCedula;
     }
 }
 
