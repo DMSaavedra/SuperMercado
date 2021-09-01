@@ -25,7 +25,7 @@ namespace SuperMercado
         private void pctSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new ListaProductos().ShowDialog();
+            new Form1().ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

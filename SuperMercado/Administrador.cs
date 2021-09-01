@@ -25,6 +25,7 @@ namespace SuperMercado
         private void Administrador_Load(object sender, EventArgs e)
         {
             lblFechaHora.Text = DateTime.Now.ToString();
+            //lblNomAdmin.Text = ;
         }
 
         #region Diseño Botones

@@ -40,6 +40,7 @@ namespace SuperMercado
             this.btnReportes = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.pnlSbmProductos = new System.Windows.Forms.Panel();
+            this.btnMarcas = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@ namespace SuperMercado
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnMarcas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).BeginInit();
@@ -114,9 +114,9 @@ namespace SuperMercado
             this.lblNomAdmin.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomAdmin.Location = new System.Drawing.Point(55, 55);
             this.lblNomAdmin.Name = "lblNomAdmin";
-            this.lblNomAdmin.Size = new System.Drawing.Size(39, 15);
+            this.lblNomAdmin.Size = new System.Drawing.Size(106, 15);
             this.lblNomAdmin.TabIndex = 1;
-            this.lblNomAdmin.Text = "Diego";
+            this.lblNomAdmin.Text = "Anthony Saavedra";
             // 
             // pctSalir
             // 
@@ -191,6 +191,23 @@ namespace SuperMercado
             this.pnlSbmProductos.Name = "pnlSbmProductos";
             this.pnlSbmProductos.Size = new System.Drawing.Size(221, 97);
             this.pnlSbmProductos.TabIndex = 4;
+            // 
+            // btnMarcas
+            // 
+            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMarcas.FlatAppearance.BorderSize = 0;
+            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(149)))), ((int)(((byte)(11)))));
+            this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarcas.Location = new System.Drawing.Point(0, 60);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnMarcas.Size = new System.Drawing.Size(221, 30);
+            this.btnMarcas.TabIndex = 1;
+            this.btnMarcas.Text = "Marcas";
+            this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMarcas.UseVisualStyleBackColor = true;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click_1);
             // 
             // button4
             // 
@@ -371,23 +388,6 @@ namespace SuperMercado
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnMarcas
-            // 
-            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMarcas.FlatAppearance.BorderSize = 0;
-            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(149)))), ((int)(((byte)(11)))));
-            this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarcas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarcas.Location = new System.Drawing.Point(0, 60);
-            this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMarcas.Size = new System.Drawing.Size(221, 30);
-            this.btnMarcas.TabIndex = 1;
-            this.btnMarcas.Text = "Marcas";
-            this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarcas.UseVisualStyleBackColor = true;
-            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click_1);
             // 
             // Administrador
             // 

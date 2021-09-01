@@ -54,6 +54,7 @@ namespace SuperMercado
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@ namespace SuperMercado
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSalir)).BeginInit();
@@ -347,6 +347,16 @@ namespace SuperMercado
             this.panel3.Size = new System.Drawing.Size(964, 207);
             this.panel3.TabIndex = 23;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(3, 2);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(98, 18);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "PRODUCTOS";
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label9);
@@ -445,7 +455,7 @@ namespace SuperMercado
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 1;
-            this.label5.Text = "$2.00";
+            this.label5.Text = "$2.25";
             // 
             // label6
             // 
@@ -485,7 +495,7 @@ namespace SuperMercado
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 1;
-            this.label4.Text = "$6.50";
+            this.label4.Text = "$4.50";
             // 
             // label3
             // 
@@ -506,16 +516,6 @@ namespace SuperMercado
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(3, 2);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(98, 18);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "PRODUCTOS";
             // 
             // Dashboard
             // 
