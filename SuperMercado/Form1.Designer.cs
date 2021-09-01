@@ -170,6 +170,7 @@ namespace SuperMercado
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(149, 24);
             this.txtCedula.TabIndex = 9;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // btnCancelar
             // 
