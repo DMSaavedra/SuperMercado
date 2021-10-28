@@ -37,6 +37,8 @@ namespace SuperMercado
         {
             lblFechaHora.Text = DateTime.Now.ToString();
             pnlProductos.Visible = false;
+            lblSubTotal.Text = "$ 0.0";
+            lblIVA.Text = "$ 0.0";
             lblTotal.Text = "$ 0.0";
             verListaProductos();
             ocultarColumnas();
@@ -117,16 +119,26 @@ namespace SuperMercado
         {
             if (dgvProdSelect.Rows.Count > 0)
             {
-                decimal total = 0;
+                decimal subtotal = 0;
+                decimal iva, total;
 
                 foreach (DataGridViewRow row in dgvProdSelect.Rows)
                 {
-                    total += Convert.ToDecimal(row.Cells["DtvTotal"].Value);
+                    subtotal += Convert.ToDecimal(row.Cells["DtvTotal"].Value);
                 }
+
+                lblSubTotal.Text = subtotal.ToString();
+
+                iva = subtotal * Convert.ToDecimal(0.1); 
+                lblIVA.Text = iva.ToString();
+
+                total = subtotal + iva;
                 lblTotal.Text = total.ToString();
             }
             else
             {
+                lblSubTotal.Text = "$ 0.0";
+                lblIVA.Text = "$ 0.0";
                 lblTotal.Text = "$ 0.0";
             }
 

@@ -86,6 +86,12 @@
     <Compile Include="MarcaAdm.Designer.cs">
       <DependentUpon>MarcaAdm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagPrueba.Designer.cs">
+      <DependentUpon>PagPrueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductosUS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MarcaAdm.resx">
       <DependentUpon>MarcaAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagPrueba.resx">
+      <DependentUpon>PagPrueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductosUS.resx">
       <DependentUpon>ProductosUS.cs</DependentUpon>
